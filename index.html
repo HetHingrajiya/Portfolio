@@ -37,7 +37,6 @@
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            cursor: none;
         }
         .gradient-text {
             background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
@@ -60,33 +59,6 @@
         .dark .glass {
             background: rgba(15, 23, 42, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-        }
-        .dark .custom-cursor {
-            background: #fff;
-        }
-        .custom-cursor-follower {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.15s ease, top 0.15s ease, left 0.15s ease;
-        }
-        .dark .custom-cursor-follower {
-            border-color: #fff;
         }
         .floating {
             animation: float 6s ease-in-out infinite;
@@ -167,8 +139,6 @@
 </head>
 <body class="bg-[#fafafa] dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-100 dark:selection:bg-blue-900 overflow-x-hidden transition-colors duration-500">
     <div class="mesh-bg"></div>
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor-follower"></div>
 
     <!-- Navbar -->
     <nav class="fixed top-0 w-full glass z-50 border-b border-white/20 dark:border-white/5">
@@ -588,31 +558,6 @@
             speed: 400,
             glare: true,
             "max-glare": 0.2,
-        });
-
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const follower = document.querySelector('.custom-cursor-follower');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                follower.style.left = e.clientX - 10 + 'px';
-                follower.style.top = e.clientY - 10 + 'px';
-            }, 50);
-        });
-
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(2.5)';
-                follower.style.transform = 'scale(0.5)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                follower.style.transform = 'scale(1)';
-            });
         });
 
         // Mobile menu toggle
