@@ -760,16 +760,16 @@
                  
                  // Professional descriptions for specific projects
                   const projectDescriptions = {
-                      'portfolio': 'A high-end, responsive professional portfolio featuring dynamic GitHub integration and modern UI/UX design.',
-                      'garage_app': 'A comprehensive garage management solution built with Flutter, streamlining service tracking and customer management.',
-                      'shiva-shine': 'A professional car detailing and service platform designed for seamless appointment booking and service showcase.',
-                      'shiva_shine': 'A professional car detailing and service platform designed for seamless appointment booking and service showcase.',
+                      'Portfolio': 'A high-end, responsive professional portfolio featuring dynamic GitHub integration and modern UI/UX design.',
+                      'Garage_app': 'A comprehensive garage management solution built with Flutter, streamlining service tracking and customer management.',
+                      'Shiva-shine': 'A professional car detailing and service platform designed for seamless appointment booking and service showcase.',
+                      'Shiva_shine': 'A professional car detailing and service platform designed for seamless appointment booking and service showcase.',
                       'movieverse': 'A dynamic movie exploration platform using TMDb API, featuring real-time search and detailed cinematic insights.',
-                      'e-commerce_platform': 'A robust full-stack e-commerce solution with integrated payment gateways and advanced product management.',
-                      'e_commerce_platform': 'A robust full-stack e-commerce solution with integrated payment gateways and advanced product management.',
-                      'e-comm': 'A lightweight, high-performance shopping application focusing on minimalist design and intuitive user flow.',
-                      'e_comm': 'A lightweight, high-performance shopping application focusing on minimalist design and intuitive user flow.',
-                      'android-projects': 'A collection of native Android applications demonstrating expertise in Java, Kotlin, and modern architecture.',
+                      'E-Commerce_Platform': 'A robust full-stack e-commerce solution with integrated payment gateways and advanced product management.',
+                      'E_Commerce_Platform': 'A robust full-stack e-commerce solution with integrated payment gateways and advanced product management.',
+                      'E-Comm': 'A lightweight, high-performance shopping application focusing on minimalist design and intuitive user flow.',
+                      'E_Comm': 'A lightweight, high-performance shopping application focusing on minimalist design and intuitive user flow.',
+                      'Android-projects': 'A collection of native Android applications demonstrating expertise in Java, Kotlin, and modern architecture.',
                   };
 
                   try {
@@ -788,8 +788,12 @@
                           const card = document.createElement('div');
                           // Center the card content using flex-col items-center text-center
                           card.className = 'group relative bg-[#fafafa] dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-100 dark:border-white/5 hover:shadow-2xl transition-all duration-500 cursor-pointer hover-scale flex flex-col items-center text-center';
-                          card.setAttribute('data-aos', 'fade-up');
-                          card.setAttribute('data-aos-delay', index * 100);
+                          
+                          // Only apply AOS if not on mobile, to prevent items being hidden when AOS is disabled
+                          if (window.innerWidth >= 768) {
+                              card.setAttribute('data-aos', 'fade-up');
+                              card.setAttribute('data-aos-delay', index * 100);
+                          }
                           
                           // Make entire card open in new page
                           card.onclick = () => window.open(repo.html_url, '_blank');
