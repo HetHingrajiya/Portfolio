@@ -9,7 +9,8 @@ const Contact = () => {
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          className="text-4xl sm:text-7xl font-black mb-8 sm:mb-12 tracking-tight text-slate-900 dark:text-white"
+        >
           Let's Create<br/><span className="section-header-gradient">Together</span>
         </motion.h2>
 
