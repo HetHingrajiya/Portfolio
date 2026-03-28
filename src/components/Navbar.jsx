@@ -50,7 +50,7 @@ const Navbar = ({ toggleTheme, isDark }) => {
     <>
       <nav className="fixed top-0 w-full glass z-50 border-b border-white/20 dark:border-white/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center">
+          <div className="flex justify-between h-16 sm:h-20 items-center">
             <div className="flex-shrink-0 font-extrabold text-3xl tracking-tighter gradient-text">HH.</div>
             <div className="hidden md:flex items-center space-x-10">
               {navLinks.map((link) => (
@@ -117,7 +117,7 @@ const Navbar = ({ toggleTheme, isDark }) => {
         </div>
         
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-20 bottom-0 glass backdrop-blur-3xl z-40 border-t border-white/20 dark:border-white/5 animate-fade-in">
+          <div className="md:hidden fixed inset-x-0 top-16 bottom-0 glass backdrop-blur-3xl z-40 border-t border-white/20 dark:border-white/5 animate-fade-in">
             <div className="flex flex-col h-full p-8 space-y-6">
               {navLinks.map((link) => (
                 <a
