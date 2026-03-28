@@ -1,8 +1,17 @@
+import { useState, useEffect } from 'react';
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 import { Code2, UserCheck, GraduationCap, User } from 'lucide-react';
 
 const About = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   return (
     <section id="about" className="py-20 sm:py-32 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
@@ -26,10 +35,23 @@ const About = () => {
                     <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 rounded-[2rem] transform -rotate-6 transition-transform hover:rotate-0 flex items-center justify-center">
                       <User className="w-20 h-20 text-blue-600/20 dark:text-blue-400/10" />
                     </div>
-                    <spline-viewer 
-                      url="https://prod.spline.design/v2o63Vp-vYjW-X75/scene.splinecode"
-                      style={{ width: '100%', height: '100%', position: 'relative', zIndex: 10 }}
-                    ></spline-viewer>
+                    
+                    {/* 3D Scene - Desktop ONLY */}
+                    {!isMobile && (
+                      <spline-viewer 
+                        url="https://prod.spline.design/v2o63Vp-vYjW-X75/scene.splinecode"
+                        style={{ width: '100%', height: '100%', position: 'relative', zIndex: 10 }}
+                      ></spline-viewer>
+                    )}
+
+                    {/* Mobile Placeholder Icon */}
+                    {isMobile && (
+                      <div className="relative z-10 w-full h-full flex items-center justify-center">
+                         <div className="w-32 h-32 bg-blue-600/20 rounded-full flex items-center justify-center animate-pulse">
+                            <User className="w-16 h-16 text-blue-600" />
+                         </div>
+                      </div>
+                    )}
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900 dark:text-white">Het Hingrajiya</h3>
                   <p className="text-blue-600 dark:text-blue-400 font-bold tracking-widest uppercase text-[10px] sm:text-xs">Full Stack Developer</p>
