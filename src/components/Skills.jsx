@@ -31,43 +31,55 @@ const Skills = () => {
       title: 'Android Native',
       desc: 'Expertise in Java & Kotlin, building high-performance native experiences.',
       Icon: SiAndroid,
-      color: 'green',
-      glowColor: 'bg-green-600'
+      color: '#3DDC84',
+      bgLight: 'rgba(61, 220, 132, 0.1)',
+      bgDark: 'rgba(61, 220, 132, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(61,220,132,0.3)]'
     },
     {
       title: 'React ecosystem',
       desc: 'Architecting modern web applications with Vite, Framer Motion, and Tailwind.',
       Icon: SiReact,
-      color: 'blue',
-      glowColor: 'bg-blue-600'
+      color: '#61DAFB',
+      bgLight: 'rgba(97, 218, 251, 0.1)',
+      bgDark: 'rgba(97, 218, 251, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(97,218,251,0.3)]'
     },
     {
       title: 'Flutter',
       desc: 'Developing beautiful, natively compiled apps for mobile and web from a single codebase.',
       Icon: SiFlutter,
-      color: 'cyan',
-      glowColor: 'bg-cyan-600'
+      color: '#02569B',
+      bgLight: 'rgba(2, 86, 155, 0.1)',
+      bgDark: 'rgba(2, 86, 155, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(2,86,155,0.3)]'
     },
     {
       title: 'Laravel',
       desc: 'Creating robust, scalable, and secure backend architectures using PHP.',
       Icon: SiLaravel,
-      color: 'red',
-      glowColor: 'bg-red-600'
+      color: '#FF2D20',
+      bgLight: 'rgba(255, 45, 32, 0.1)',
+      bgDark: 'rgba(255, 45, 32, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(255,45,32,0.3)]'
     },
     {
       title: 'MySQL',
       desc: 'Designing efficient database schemas and optimizing complex queries for data integrity.',
       Icon: SiMysql,
-      color: 'orange',
-      glowColor: 'bg-orange-600'
+      color: '#4479A1',
+      bgLight: 'rgba(68, 121, 161, 0.1)',
+      bgDark: 'rgba(68, 121, 161, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(68,121,161,0.3)]'
     },
     {
       title: 'Firebase',
       desc: 'Implementing real-time databases, cloud functions, and seamless authentication.',
       Icon: SiFirebase,
-      color: 'amber',
-      glowColor: 'bg-amber-600'
+      color: '#FFCA28',
+      bgLight: 'rgba(255, 202, 40, 0.1)',
+      bgDark: 'rgba(255, 202, 40, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(255,202,40,0.3)]'
     }
   ];
 
@@ -108,20 +120,28 @@ const Skills = () => {
                 <motion.div 
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className={`absolute -right-20 -top-20 w-64 h-64 bg-${skill.color}-500/10 rounded-full blur-3xl group-hover:bg-${skill.color}-500/20 transition-colors duration-500`}
+                  className="absolute -right-20 -top-20 w-64 h-64 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                  style={{ backgroundColor: skill.color }}
                 ></motion.div>
 
                 <motion.div 
                   animate={floatAnimation}
-                  className={`w-20 h-20 sm:w-24 sm:h-24 bg-${skill.color}-50 dark:bg-${skill.color}-900/20 rounded-3xl sm:rounded-[2.5rem] flex items-center justify-center mb-8 relative z-10 group-hover:${skill.glowColor} transition-all duration-500 shadow-lg shadow-${skill.color}-500/20`}
+                  className={`w-20 h-20 sm:w-24 sm:h-24 rounded-3xl sm:rounded-[2.5rem] flex items-center justify-center mb-8 relative z-10 transition-all duration-500 shadow-lg ${skill.glow}`}
+                  style={{ backgroundColor: isDark ? skill.bgDark : skill.bgLight }}
                 >
-                  <skill.Icon className={`text-${skill.color}-600 dark:text-${skill.color}-400 group-hover:text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors`} />
+                  <skill.Icon 
+                    className="w-10 h-10 sm:w-12 sm:h-12 transition-all duration-500 group-hover:scale-110" 
+                    style={{ color: skill.color }} 
+                  />
                 </motion.div>
                 
                 <h3 className="text-2xl sm:text-3xl font-black mb-3 sm:mb-4 text-slate-900 dark:text-white relative z-10">{skill.title}</h3>
                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed relative z-10">{skill.desc}</p>
                 
-                <div className={`mt-8 flex items-center gap-2 text-${skill.color}-600 dark:text-${skill.color}-400 text-xs font-black uppercase tracking-widest relative z-10 opacity-70 group-hover:opacity-100 translate-x-0 group-hover:translate-x-2 transition-all duration-300`}>
+                <div 
+                  className="mt-8 flex items-center gap-2 text-xs font-black uppercase tracking-widest relative z-10 opacity-70 group-hover:opacity-100 translate-x-0 group-hover:translate-x-2 transition-all duration-300"
+                  style={{ color: skill.color }}
+                >
                   Explore Framework <ArrowRight className="w-4 h-4" />
                 </div>
               </motion.a>
