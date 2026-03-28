@@ -77,19 +77,7 @@ const Hero = () => {
           )}
 
           {/* Mobile Fallback: Lottie Robot */}
-          {isMobile && (
-            <div className="w-full h-full flex items-center justify-center">
-              <lottie-player 
-                src="/robot.json" 
-                background="transparent" 
-                speed="1" 
-                style={{ width: '100%', height: '100%' }} 
-                loop 
-                autoplay
-                aria-hidden="true"
-              ></lottie-player>
-            </div>
-          )}
+          {/* Animation removed to decrease vertical space */}
           
           {/* Static Fallback / Background Glow */}
           <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-400/10 rounded-full blur-3xl scale-75 animate-pulse"></div>

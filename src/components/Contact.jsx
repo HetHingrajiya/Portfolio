@@ -14,22 +14,7 @@ const Contact = () => {
           Let's Create<br/><span className="section-header-gradient">Together</span>
         </motion.h2>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="mx-auto w-48 h-48 sm:w-64 sm:h-64 -mt-8 mb-4 overflow-hidden"
-        >
-          <lottie-player 
-            src="/robot.json" 
-            background="transparent" 
-            speed="1" 
-            style={{ width: '100%', height: '100%' }} 
-            loop 
-            autoplay
-            aria-hidden="true"
-          ></lottie-player>
-        </motion.div>
+        {/* Animation removed to decrease vertical space */}
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
