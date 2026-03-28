@@ -81,8 +81,12 @@ const Projects = () => {
                   {repo.language && (
                     <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span> {repo.language}</span>
                   )}
-                  <span className="flex items-center gap-1"><Star className="w-4 h-4" /> {repo.stargazers_count}</span>
-                  <span className="flex items-center gap-1"><GitFork className="w-4 h-4" /> {repo.forks_count}</span>
+                  {repo.stargazers_count > 0 && (
+                    <span className="flex items-center gap-1"><Star className="w-4 h-4" /> {repo.stargazers_count}</span>
+                  )}
+                  {repo.forks_count > 0 && (
+                    <span className="flex items-center gap-1"><GitFork className="w-4 h-4" /> {repo.forks_count}</span>
+                  )}
                 </div>
               </motion.div>
             )) : (
