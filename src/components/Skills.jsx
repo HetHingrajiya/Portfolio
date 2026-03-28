@@ -120,10 +120,10 @@ const Skills = ({ isDark }) => {
                 <motion.div 
                   animate={{ 
                     rotate: 360,
-                    scale: [1, 1.2, 1],
+                    scale: [1, 1.1, 1],
                   }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="absolute -right-16 -top-16 w-48 h-48 rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-700"
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="absolute -right-20 -top-20 w-64 h-64 rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"
                   style={{ backgroundColor: skill.color }}
                 ></motion.div>
 
@@ -142,10 +142,10 @@ const Skills = ({ isDark }) => {
                 <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed relative z-10">{skill.desc}</p>
                 
                 <div 
-                  className="mt-8 flex items-center gap-2 text-xs font-black uppercase tracking-widest relative z-10 opacity-70 group-hover:opacity-100 translate-x-0 group-hover:translate-x-2 transition-all duration-300"
+                  className="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] relative z-10 opacity-50 group-hover:opacity-80 translate-x-0 group-hover:translate-x-1 transition-all duration-500"
                   style={{ color: skill.color }}
                 >
-                  <span className="bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">Explore Framework</span> <ArrowRight className="w-4 h-4" />
+                  Explore Framework <ArrowRight className="w-3 h-3" />
                 </div>
               </motion.a>
             </Tilt>
