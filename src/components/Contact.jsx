@@ -21,7 +21,7 @@ const Contact = () => {
           className="mx-auto w-48 h-48 sm:w-64 sm:h-64 -mt-8 mb-4 overflow-hidden"
         >
           <dotlottie-player 
-            src="https://lottie.host/80dcda10-53bc-42b7-84bc-25fc51206fa1/XEDo00Sg9z.json" 
+            src="https://lottie.host/64703a4c-5f93-4702-901d-55964d471550/S3L6qZ2vSg.json" 
             background="transparent" 
             speed="1" 
             style={{ width: '100%', height: '100%' }} 
