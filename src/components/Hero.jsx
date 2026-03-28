@@ -15,7 +15,7 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-32 overflow-hidden px-4">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-16 sm:pt-32 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
       <div 
         className="hero-blob bottom-1/4 -right-20" 
@@ -42,7 +42,7 @@ const Hero = () => {
               className="text-slate-800 dark:text-slate-200"
             />
           </h1>
-          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-8 sm:mb-12 max-w-xl leading-relaxed font-medium">
+          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-6 sm:mb-12 max-w-xl leading-relaxed font-medium">
             Designing and developing cutting-edge mobile solutions that bridge the gap between imagination and reality.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 w-full justify-center lg:justify-start">

@@ -5,6 +5,15 @@ import { loadSlim } from "@tsparticles/slim";
 const BackgroundParticles = ({ isDark }) => {
   const [init, setInit] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -57,7 +66,7 @@ const BackgroundParticles = ({ isDark }) => {
             width: 1.2,
             consent: false,
             triangles: {
-              enable: true,
+              enable: !isMobile,
               opacity: 0.05
             }
           },
@@ -69,7 +78,10 @@ const BackgroundParticles = ({ isDark }) => {
             speed: 1.2,
             straight: false,
           },
-          number: { density: { enable: true, area: 900 }, value: 60 },
+          number: { 
+            density: { enable: true, area: 900 }, 
+            value: isMobile ? 30 : 60 
+          },
           opacity: { value: isDark ? 0.3 : 0.4 },
           shape: { type: "circle" },
           size: { value: { min: 1, max: 4 } },
