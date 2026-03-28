@@ -80,7 +80,7 @@ const Hero = () => {
           {isMobile && (
             <div className="w-full h-full flex items-center justify-center">
               <lottie-player 
-                src="https://assets10.lottiefiles.com/packages/lf20_v74w8x.json" 
+                src="https://assets3.lottiefiles.com/packages/lf20_q5pk6pnu.json" 
                 background="transparent" 
                 speed="1" 
                 style={{ width: '100%', height: '100%' }} 
