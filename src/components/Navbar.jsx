@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, Mail } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
