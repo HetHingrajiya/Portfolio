@@ -5,8 +5,8 @@ const Education = () => {
   const eduData = [
     { title: 'MCA', inst: 'Dr. Babasaheb Ambedkar Open University', year: '2025 - 2027', metric: 'Years', val: '30%', type: 'Current', color: 'blue' },
     { title: 'BCA', inst: 'Atmiya University', year: '2022 - 2025', metric: 'CGPA', val: '87.2%', type: 'Graduate', color: 'blue' },
-    { title: 'HSC', inst: 'Sarvodaya School', year: 'High School', metric: 'Percentage', val: '85.8%', type: 'SSC', color: 'slate' },
-    { title: 'SSC', inst: 'Divyatej School', year: 'Secondary Education', metric: 'Percentage', val: '82.5%', type: 'SSC', color: 'slate' },
+    { title: 'HSC', inst: 'Sarvodaya School', year: 'High School', metric: 'Percentage', val: '85.8%', type: 'SSC', color: 'blue' },
+    { title: 'SSC', inst: 'Divyatej School', year: 'Secondary Education', metric: 'Percentage', val: '82.5%', type: 'SSC', color: 'blue' },
   ];
 
   const achData = [
@@ -62,13 +62,13 @@ const Education = () => {
                        edu.type === 'Current' ? '2025 - 2027' : edu.val}
                     </span>
                   </div>
-                  <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
+                  <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: edu.val }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                      className={`bg-${edu.color}-600 dark:bg-${edu.color}-400 h-2.5 rounded-full ${edu.type === 'Current' ? 'animate-pulse shadow-[0_0_15px_rgba(59,130,246,0.5)]' : ''}`} 
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      className={`bg-blue-600 dark:bg-blue-400 h-full rounded-full ${edu.type === 'Current' ? 'animate-pulse shadow-[0_0_15px_rgba(59,130,246,0.5)]' : ''}`} 
                     ></motion.div>
                   </div>
                 </div>
