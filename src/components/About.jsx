@@ -1,6 +1,6 @@
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
-import { Code2 } from 'lucide-react';
+import { Code2, UserCheck, GraduationCap, User } from 'lucide-react';
 
 const About = () => {
   return (
@@ -23,10 +23,12 @@ const About = () => {
                 </div>
                 <div className="relative z-10 text-center py-6 sm:py-10">
                   <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-6 sm:mb-8 flex items-center justify-center relative">
-                    <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 rounded-[2rem] transform -rotate-6 transition-transform hover:rotate-0"></div>
+                    <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 rounded-[2rem] transform -rotate-6 transition-transform hover:rotate-0 flex items-center justify-center">
+                      <User className="w-20 h-20 text-blue-600/20 dark:text-blue-400/10" />
+                    </div>
                     <spline-viewer 
                       url="https://prod.spline.design/v2o63Vp-vYjW-X75/scene.splinecode"
-                      style={{ width: '100%', height: '100%' }}
+                      style={{ width: '100%', height: '100%', position: 'relative', zIndex: 10 }}
                     ></spline-viewer>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900 dark:text-white">Het Hingrajiya</h3>
@@ -52,13 +54,23 @@ const About = () => {
               My approach blends robust technical implementation in <span className="text-blue-600 dark:text-blue-400 font-bold">Android, React, Flutter, and Laravel</span> with a keen eye for modern UI/UX principles, ensuring every app is as beautiful as it is functional.
             </p>
             <div className="grid grid-cols-2 gap-4 sm:gap-8">
-              <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300">
-                <h4 className="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 mb-1 sm:mb-2">1+</h4>
-                <p className="text-[10px] sm:text-sm font-bold text-slate-500 uppercase tracking-widest">Year Exp.</p>
+              <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300 flex items-center gap-4 sm:gap-6">
+                <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <UserCheck className="text-blue-600 w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400 mb-0.5">1+</h4>
+                  <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Year Exp.</p>
+                </div>
               </div>
-              <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300">
-                <h4 className="text-3xl sm:text-4xl font-black text-purple-600 dark:text-purple-400 mb-1 sm:mb-2">BCA</h4>
-                <p className="text-[10px] sm:text-sm font-bold text-slate-500 uppercase tracking-widest">Graduate</p>
+              <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300 flex items-center gap-4 sm:gap-6">
+                <div className="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="text-purple-600 w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="text-2xl sm:text-3xl font-black text-purple-600 dark:text-purple-400 mb-0.5">BCA</h4>
+                  <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Graduate</p>
+                </div>
               </div>
             </div>
           </motion.div>
