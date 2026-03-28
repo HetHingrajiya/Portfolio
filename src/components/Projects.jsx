@@ -12,7 +12,12 @@ const Projects = () => {
       try {
         const response = await fetch('https://api.github.com/users/HetHingrajiya/repos?sort=updated&per_page=6');
         const data = await response.json();
-        setRepos(data);
+        if (Array.isArray(data)) {
+          setRepos(data);
+        } else {
+          console.error('GitHub API rate limit exceeded or invalid data', data);
+          setRepos([]);
+        }
       } catch (error) {
         console.error('Error fetching repos:', error);
       } finally {
@@ -54,7 +59,7 @@ const Projects = () => {
               <div key={i} className="animate-pulse bg-slate-100 dark:bg-slate-800/50 rounded-[2rem] h-80"></div>
             ))
           ) : (
-            repos.map((repo, idx) => (
+            repos && repos.length > 0 ? repos.map((repo, idx) => (
               <motion.div
                 key={repo.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -79,7 +84,11 @@ const Projects = () => {
                   <span className="flex items-center gap-1"><GitFork className="w-4 h-4" /> {repo.forks_count}</span>
                 </div>
               </motion.div>
-            ))
+            )) : (
+              <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-10 text-slate-500">
+                Projects are currently unavailable. Please check my GitHub directly.
+              </div>
+            )
           )}
         </div>
 

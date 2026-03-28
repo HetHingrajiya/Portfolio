@@ -1,22 +1,9 @@
-import { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
 import { Sparkles } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { ReactTyped } from "react-typed";
 
 const Hero = () => {
-  const el = useRef(null);
-
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: ['Android Developer', 'React Developer', 'Flutter Developer', 'Laravel Developer'],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true,
-    });
-    return () => typed.destroy();
-  }, []);
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
@@ -39,7 +26,13 @@ const Hero = () => {
           </h2>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black mb-6 sm:mb-10 tracking-tight leading-[1] sm:leading-none text-slate-900 dark:text-white">
             I'm <span className="gradient-text">Het Hingrajiya</span><br />
-            <span ref={el} className="text-slate-800 dark:text-slate-200"></span>
+            <ReactTyped 
+              strings={['Android Developer', 'React Developer', 'Flutter Developer', 'Laravel Developer']} 
+              typeSpeed={50} 
+              backSpeed={30} 
+              loop 
+              className="text-slate-800 dark:text-slate-200"
+            />
           </h1>
           <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-10 sm:mb-14 max-w-xl leading-relaxed font-medium">
             Designing and developing cutting-edge mobile solutions that bridge the gap between imagination and reality.
