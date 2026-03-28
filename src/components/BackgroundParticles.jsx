@@ -24,19 +24,42 @@ const BackgroundParticles = ({ isDark }) => {
         fpsLimit: 120,
         interactivity: {
           events: {
-            onHover: { enable: true, mode: "grab" },
+            onHover: { 
+              enable: true, 
+              mode: ["grab", "bubble"] 
+            },
             resize: true,
           },
-          modes: { grab: { distance: 160, links: { opacity: 0.6 } } },
+          modes: { 
+            grab: { 
+              distance: 200, 
+              links: { 
+                opacity: 0.8,
+                color: isDark ? "#ffffff" : "#4f46e5"
+              } 
+            },
+            bubble: {
+              distance: 200,
+              size: 6,
+              duration: 2,
+              opacity: 0.8,
+              speed: 3
+            }
+          },
         },
         particles: {
           color: { value: isDark ? "#ffffff" : "#4f46e5" },
           links: {
             color: isDark ? "#ffffff" : "#4f46e5",
-            distance: 140,
+            distance: 150,
             enable: true,
-            opacity: 0.15,
-            width: 1.5,
+            opacity: 0.2,
+            width: 1.2,
+            consent: false,
+            triangles: {
+              enable: true,
+              opacity: 0.05
+            }
           },
           move: {
             direction: "none",
