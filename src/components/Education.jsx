@@ -57,7 +57,10 @@ const Education = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-end">
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{edu.metric}</span>
-                    <span className={`text-xl sm:text-2xl font-black text-${edu.color}-600 dark:text-${edu.color}-400`}>{edu.type === 'Graduate' ? '8.72' : edu.val.replace('%', '') + (edu.type === 'Current' ? '2025-2027' : '%')}</span>
+                    <span className={`text-xl sm:text-2xl font-black text-${edu.color}-600 dark:text-${edu.color}-400`}>
+                      {edu.type === 'Graduate' ? '8.72' : 
+                       edu.type === 'Current' ? `${edu.val} (25-27)` : edu.val}
+                    </span>
                   </div>
                   <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
                     <motion.div 
