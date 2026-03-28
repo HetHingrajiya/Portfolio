@@ -3,7 +3,7 @@ import { MapPin, Award, Terminal, Cpu } from 'lucide-react';
 
 const Education = () => {
   const eduData = [
-    { title: 'MCA', inst: 'Dr. Babasaheb Ambedkar Open University', year: '2025 - 2027', metric: 'Duration', val: '30%', type: 'Current', color: 'blue' },
+    { title: 'MCA', inst: 'Dr. Babasaheb Ambedkar Open University', year: '2025 - 2027', metric: 'Years', val: '30%', type: 'Current', color: 'blue' },
     { title: 'BCA', inst: 'Atmiya University', year: '2022 - 2025', metric: 'CGPA', val: '87.2%', type: 'Graduate', color: 'blue' },
     { title: 'HSC', inst: 'Sarvodaya School', year: 'High School', metric: 'Percentage', val: '85.8%', type: 'SSC', color: 'slate' },
     { title: 'SSC', inst: 'Divyatej School', year: 'Secondary Education', metric: 'Percentage', val: '82.5%', type: 'SSC', color: 'slate' },
@@ -59,7 +59,7 @@ const Education = () => {
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{edu.metric}</span>
                     <span className={`text-xl sm:text-2xl font-black text-${edu.color}-600 dark:text-${edu.color}-400`}>
                       {edu.type === 'Graduate' ? '8.72' : 
-                       edu.type === 'Current' ? `${edu.val} (25-27)` : edu.val}
+                       edu.type === 'Current' ? '2025 - 2027' : edu.val}
                     </span>
                   </div>
                   <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
