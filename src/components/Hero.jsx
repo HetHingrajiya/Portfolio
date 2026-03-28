@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { Sparkles, ChevronDown } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
