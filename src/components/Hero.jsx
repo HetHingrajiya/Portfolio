@@ -15,7 +15,7 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <section id="home" className="relative min-h-0 lg:min-h-[90vh] flex items-center justify-center pt-8 sm:pt-32 overflow-hidden px-4">
+    <section id="home" className="relative min-h-0 lg:min-h-[90vh] flex items-center justify-center pt-20 pb-12 sm:pt-32 lb:pb-24 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
       <div 
         className="hero-blob bottom-1/4 -right-20" 
