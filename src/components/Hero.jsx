@@ -9,7 +9,7 @@ const Hero = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Android Developer', 'Full Stack App Developer'],
+      strings: ['Android Developer', 'React Developer', 'Flutter Developer', 'Laravel Developer'],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true,

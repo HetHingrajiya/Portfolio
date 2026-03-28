@@ -34,7 +34,7 @@ const About = () => {
                     ></lottie-player>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900 dark:text-white">Het Hingrajiya</h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-bold tracking-widest uppercase text-[10px] sm:text-xs">Android Specialist</p>
+                  <p className="text-blue-600 dark:text-blue-400 font-bold tracking-widest uppercase text-[10px] sm:text-xs">Full Stack Developer</p>
                 </div>
               </div>
             </Tilt>
@@ -50,10 +50,10 @@ const About = () => {
               Crafting Digital<br/><span className="text-blue-600 dark:text-blue-400">Excellence</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8 font-medium">
-              With a BCA degree and a deep-seated passion for mobile ecosystems, I specialize in transforming complex requirements into seamless, native Android experiences.
+              With a BCA degree and a deep-seated passion for cross-platform ecosystems, I specialize in transforming complex requirements into seamless digital experiences across Mobile and Web.
             </p>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 sm:mb-10">
-              My approach blends robust technical implementation in <span className="text-blue-600 dark:text-blue-400 font-bold">Java & Kotlin</span> with a keen eye for modern UI/UX principles, ensuring every app is as beautiful as it is functional.
+              My approach blends robust technical implementation in <span className="text-blue-600 dark:text-blue-400 font-bold">Android, React, Flutter, and Laravel</span> with a keen eye for modern UI/UX principles, ensuring every app is as beautiful as it is functional.
             </p>
             <div className="grid grid-cols-2 gap-4 sm:gap-8">
               <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300">
