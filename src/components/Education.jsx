@@ -36,7 +36,7 @@ const Education = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`glass p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl card-glow flex flex-col h-full ${edu.type === 'Current' ? 'border-2 border-blue-600/30 dark:border-blue-400/30' : 'border border-white/50 dark:border-white/5'}`}
+                className={`glass p-5 sm:p-10 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-xl card-glow flex flex-col h-full ${edu.type === 'Current' ? 'border-2 border-blue-600/30 dark:border-blue-400/30' : 'border border-white/50 dark:border-white/5'}`}
               >
                 <div className="mb-auto">
                   {edu.type === 'Current' ? (

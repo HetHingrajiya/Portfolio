@@ -8,6 +8,11 @@
     --secondary: #8b5cf6;
     --accent: #ec4899;
   }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
   html {
     scroll-behavior: smooth;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
@@ -165,6 +170,21 @@
 
   .hover-scale:hover {
     transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  .floating {
+    animation: none;
+  }
+
+  .hero-blob {
+    animation: none;
   }
 }
 

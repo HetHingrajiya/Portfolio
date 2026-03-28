@@ -53,7 +53,7 @@ const Hero = () => {
             </MagneticButton>
             
             <MagneticButton className="w-full sm:w-auto">
-              <a href="https://github.com/HetHingrajiya" target="_blank" rel="noreferrer" className="glass text-slate-900 dark:text-white px-10 sm:px-12 py-5 sm:py-6 rounded-2xl sm:rounded-3xl font-bold hover:bg-white dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-3 text-sm sm:text-base border border-slate-200 dark:border-white/10 w-full">
+              <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" className="glass text-slate-900 dark:text-white px-10 sm:px-12 py-5 sm:py-6 rounded-2xl sm:rounded-3xl font-bold hover:bg-white dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-3 text-sm sm:text-base border border-slate-200 dark:border-white/10 w-full">
                 <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" /> Explore Work
               </a>
             </MagneticButton>
@@ -86,6 +86,7 @@ const Hero = () => {
                 style={{ width: '100%', height: '100%' }} 
                 loop 
                 autoplay
+                aria-hidden="true"
               ></lottie-player>
             </div>
           )}

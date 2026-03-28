@@ -34,6 +34,8 @@ const Navbar = ({ toggleTheme, isDark }) => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const mobileNavId = 'primary-menu-mobile';
+
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
@@ -67,7 +69,9 @@ const Navbar = ({ toggleTheme, isDark }) => {
               ))}
               
               <button 
+                type="button"
                 onClick={toggleTheme}
+                aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
                 className="relative p-2.5 rounded-2xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-amber-400 transition-all border border-slate-200/50 dark:border-white/10 overflow-hidden w-12 h-12 flex items-center justify-center shadow-lg group active:scale-95"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -96,12 +100,15 @@ const Navbar = ({ toggleTheme, isDark }) => {
                 </AnimatePresence>
               </button>
             </div>
-            <div className="md:hidden flex items-center gap-4">
-              <button onClick={toggleTheme} className="relative p-2 rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden w-9 h-9 flex items-center justify-center">
+            <div className="md:hidden flex items-center gap-2">
+              <button 
+                onClick={toggleTheme} 
+                className="relative p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 overflow-hidden w-10 h-10 flex items-center justify-center active:scale-95 transition-all"
+              >
                 <AnimatePresence mode="wait">
                   {isDark ? (
                     <motion.div key="m-sun" initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0, rotate: 180 }} transition={{ duration: 0.3 }}>
-                      <Sun className="w-5 h-5 text-amber-400" />
+                      <Sun className="w-5 h-5 text-amber-500" />
                     </motion.div>
                   ) : (
                     <motion.div key="m-moon" initial={{ scale: 0, rotate: 180 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0, rotate: -180 }} transition={{ duration: 0.3 }}>
@@ -110,15 +117,15 @@ const Navbar = ({ toggleTheme, isDark }) => {
                   )}
                 </AnimatePresence>
               </button>
-              <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-slate-900 dark:text-white">
-                <Menu />
+              <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-slate-900 dark:text-white active:scale-90 transition-transform">
+                <Menu className="w-7 h-7" />
               </button>
             </div>
           </div>
         </div>
         
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-16 bottom-0 glass backdrop-blur-3xl z-40 border-t border-white/20 dark:border-white/5 animate-fade-in">
+          <div id={mobileNavId} className="md:hidden fixed inset-x-0 top-16 bottom-0 glass backdrop-blur-3xl z-40 border-t border-white/20 dark:border-white/5 animate-fade-in" role="dialog" aria-modal="true" aria-label="Site navigation">
             <div className="flex flex-col h-full p-8 space-y-6">
               {navLinks.map((link) => (
                 <a
@@ -133,9 +140,9 @@ const Navbar = ({ toggleTheme, isDark }) => {
               
               <div className="mt-auto pt-10 border-t border-slate-200 dark:border-slate-800">
                 <div className="flex gap-6 justify-center">
-                  <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noreferrer" className="p-4 glass rounded-2xl"><FaLinkedin /></a>
-                  <a href="https://github.com/HetHingrajiya" target="_blank" rel="noreferrer" className="p-4 glass rounded-2xl"><FaGithub /></a>
-                  <a href="mailto:hethingrajiya97@gmail.com" className="p-4 glass rounded-2xl"><Mail /></a>
+                  <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-4 glass rounded-2xl"><FaLinkedin className="w-6 h-6" aria-hidden /></a>
+                  <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-4 glass rounded-2xl"><FaGithub className="w-6 h-6" aria-hidden /></a>
+                  <a href="mailto:hethingrajiya97@gmail.com" aria-label="Email Het Hingrajiya" className="p-4 glass rounded-2xl"><Mail className="w-6 h-6" aria-hidden /></a>
                 </div>
               </div>
             </div>

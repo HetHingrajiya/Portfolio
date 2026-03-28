@@ -30,7 +30,7 @@ const BackgroundParticles = ({ isDark }) => {
       className="absolute inset-0 z-0 pointer-events-none"
       options={{
         background: { color: { value: "transparent" } },
-        fpsLimit: 120,
+        fpsLimit: isMobile ? 45 : 90,
         interactivity: {
           events: {
             onHover: { 

@@ -27,6 +27,7 @@ const Contact = () => {
             style={{ width: '100%', height: '100%' }} 
             loop 
             autoplay
+            aria-hidden="true"
           ></lottie-player>
         </motion.div>
 
@@ -59,11 +60,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="flex justify-center gap-6 sm:gap-10"
         >
-          <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noreferrer" className="p-4 sm:p-6 glass rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:-translate-y-2">
-            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" />
+          <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-4 sm:p-6 glass rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:-translate-y-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500">
+            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" aria-hidden />
           </a>
-          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noreferrer" className="p-4 sm:p-6 glass rounded-full hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 hover:text-white transition-all shadow-lg hover:-translate-y-2">
-            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8" />
+          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-4 sm:p-6 glass rounded-full hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 hover:text-white transition-all shadow-lg hover:-translate-y-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500">
+            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8" aria-hidden />
           </a>
         </motion.div>
         

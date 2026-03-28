@@ -35,10 +35,12 @@ const Footer = () => {
 
       {/* Back to Top Button */}
       <button 
+        type="button"
         onClick={goToTop}
-        className={`fixed bottom-8 right-8 p-4 glass rounded-2xl shadow-2xl z-50 transition-all duration-500 hover:bg-blue-600 hover:text-white group ${showTopBtn ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'}`}
+        aria-label="Back to top"
+        className={`fixed bottom-8 right-8 p-4 glass rounded-2xl shadow-2xl z-50 transition-all duration-500 hover:bg-blue-600 hover:text-white group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500 ${showTopBtn ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-24 opacity-0 pointer-events-none'}`}
       >
-        <ChevronUp className="w-6 h-6 group-hover:animate-bounce" />
+        <ChevronUp className="w-6 h-6 group-hover:animate-bounce" aria-hidden />
       </button>
     </>
   );

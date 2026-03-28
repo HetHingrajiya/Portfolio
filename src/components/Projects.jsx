@@ -60,14 +60,16 @@ const Projects = () => {
             ))
           ) : (
             repos && repos.length > 0 ? repos.map((repo, idx) => (
-              <motion.div
+              <motion.a
                 key={repo.id}
+                href={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                onClick={() => window.open(repo.html_url, '_blank')}
-                className="group relative bg-[#fafafa] dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-100 dark:border-white/5 hover:shadow-2xl transition-all duration-500 cursor-pointer p-8 flex flex-col h-full transform hover:-translate-y-2 card-glow"
+                className="group relative bg-[#fafafa] dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-100 dark:border-white/5 hover:shadow-2xl transition-all duration-500 cursor-pointer p-8 flex flex-col h-full transform hover:-translate-y-2 card-glow no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 via-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full -mr-12 -mt-12 blur-3xl group-hover:bg-blue-600/20 transition-colors duration-500"></div>
@@ -88,7 +90,7 @@ const Projects = () => {
                     <span className="flex items-center gap-1"><GitFork className="w-4 h-4" /> {repo.forks_count}</span>
                   )}
                 </div>
-              </motion.div>
+              </motion.a>
             )) : (
               <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-10 text-slate-500">
                 Projects are currently unavailable. Please check my GitHub directly.
@@ -103,7 +105,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-12 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-black hover:scale-105 transition-transform shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-none">
+          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-12 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-black hover:scale-105 transition-transform shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500">
             View Full Archive <FaGithub />
           </a>
         </motion.div>
