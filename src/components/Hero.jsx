@@ -79,14 +79,14 @@ const Hero = () => {
           {/* Mobile Fallback: Lottie Robot */}
           {isMobile && (
             <div className="w-full h-full flex items-center justify-center">
-              <lottie-player 
+              <dotlottie-player 
                 src="https://lottie.host/80dcda10-53bc-42b7-84bc-25fc51206fa1/XEDo00Sg9z.json" 
                 background="transparent" 
                 speed="1" 
                 style={{ width: '100%', height: '100%' }} 
                 loop 
                 autoplay
-              ></lottie-player>
+              ></dotlottie-player>
             </div>
           )}
           

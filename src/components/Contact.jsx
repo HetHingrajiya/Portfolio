@@ -20,14 +20,14 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mx-auto w-48 h-48 sm:w-64 sm:h-64 -mt-8 mb-4 overflow-hidden"
         >
-          <lottie-player 
+          <dotlottie-player 
             src="https://lottie.host/80dcda10-53bc-42b7-84bc-25fc51206fa1/XEDo00Sg9z.json" 
             background="transparent" 
             speed="1" 
-            style={{ width: '100%', height: '100%', transform: 'scale(1.5)' }} 
+            style={{ width: '100%', height: '100%' }} 
             loop 
             autoplay
-          ></lottie-player>
+          ></dotlottie-player>
         </motion.div>
 
         <motion.div 
