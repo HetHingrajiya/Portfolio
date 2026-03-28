@@ -3,7 +3,7 @@ import Tilt from 'react-parallax-tilt';
 import { SiAndroid, SiReact, SiFlutter, SiLaravel, SiMysql, SiFirebase } from 'react-icons/si';
 import { ArrowRight } from 'lucide-react';
 
-const Skills = () => {
+const Skills = ({ isDark }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

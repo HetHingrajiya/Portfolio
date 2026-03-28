@@ -70,7 +70,7 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
+        <Skills isDark={isDark} />
         <Projects />
         <Experience />
         <Education />
