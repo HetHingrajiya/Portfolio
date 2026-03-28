@@ -67,16 +67,6 @@ const Hero = () => {
         </motion.div>
       </div>
       
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating inline-block"
-      >
-        <a href="#about" className="p-4 rounded-full glass inline-block">
-          <ChevronDown className="text-slate-400 dark:text-slate-500 animate-bounce" />
-        </a>
-      </motion.div>
     </section>
   );
 };
