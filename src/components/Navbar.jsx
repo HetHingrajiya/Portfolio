@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, Mail } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ toggleTheme, isDark }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,14 +67,46 @@ const Navbar = ({ toggleTheme, isDark }) => {
               
               <button 
                 onClick={toggleTheme}
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all border border-slate-200 dark:border-slate-700"
+                className="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-amber-400 transition-all border border-slate-200 dark:border-slate-700 overflow-hidden w-10 h-10 flex items-center justify-center shadow-inner"
               >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                <AnimatePresence mode="wait">
+                  {isDark ? (
+                    <motion.div
+                      key="sun"
+                      initial={{ y: 20, opacity: 0, rotate: -90 }}
+                      animate={{ y: 0, opacity: 1, rotate: 0 }}
+                      exit={{ y: -20, opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Sun className="w-5 h-5 text-amber-400" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="moon"
+                      initial={{ y: 20, opacity: 0, rotate: 90 }}
+                      animate={{ y: 0, opacity: 1, rotate: 0 }}
+                      exit={{ y: -20, opacity: 0, rotate: -90 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Moon className="w-5 h-5 text-blue-600" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </button>
             </div>
             <div className="md:hidden flex items-center gap-4">
-              <button onClick={toggleTheme} className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800">
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              <button onClick={toggleTheme} className="relative p-2 rounded-lg bg-slate-100 dark:bg-slate-800 overflow-hidden w-9 h-9 flex items-center justify-center">
+                <AnimatePresence mode="wait">
+                  {isDark ? (
+                    <motion.div key="m-sun" initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0, rotate: 180 }} transition={{ duration: 0.3 }}>
+                      <Sun className="w-5 h-5 text-amber-400" />
+                    </motion.div>
+                  ) : (
+                    <motion.div key="m-moon" initial={{ scale: 0, rotate: 180 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0, rotate: -180 }} transition={{ duration: 0.3 }}>
+                      <Moon className="w-5 h-5 text-blue-600" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </button>
               <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-slate-900 dark:text-white">
                 <Menu />
