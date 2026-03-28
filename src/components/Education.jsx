@@ -40,9 +40,15 @@ const Education = () => {
               >
                 <div className="mb-auto">
                   {edu.type === 'Current' ? (
-                     <span className="px-5 py-1.5 bg-blue-600 text-white rounded-full font-black text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-blue-500/30">Current</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg mb-6">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                      </span>
+                      <span className="text-white font-black text-[10px] uppercase tracking-widest">In Progress</span>
+                    </div>
                   ) : (
-                     <span className={`text-${edu.type === 'Graduate' ? 'blue' : 'slate'}-600 dark:text-${edu.type === 'Graduate' ? 'blue' : 'slate'}-400 font-black text-[10px] sm:text-xs uppercase tracking-[0.2em]`}>{edu.year}</span>
+                      <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-black text-[10px] sm:text-xs uppercase tracking-[0.2em]">{edu.year}</span>
                   )}
                   <h3 className="text-2xl sm:text-3xl font-black mt-8 mb-2 text-slate-900 dark:text-white">{edu.title}</h3>
                   <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-bold mb-4 leading-tight">{edu.inst}</p>

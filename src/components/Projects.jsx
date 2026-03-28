@@ -105,8 +105,13 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-12 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-black hover:scale-105 transition-transform shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500">
-            View Full Archive <FaGithub />
+          <a 
+            href="https://github.com/HetHingrajiya" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-[2rem] font-black hover:scale-105 transition-transform shadow-[0_20px_50px_rgba(59,130,246,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500 active:scale-95"
+          >
+            View Full Archive <FaGithub className="w-5 h-5" />
           </a>
         </motion.div>
       </div>

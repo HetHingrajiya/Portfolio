@@ -63,20 +63,25 @@
   .card-glow::before {
     content: '';
     position: absolute;
-    inset: -1px;
+    inset: -2px;
     background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
     border-radius: inherit;
     z-index: -1;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(10px);
   }
-
+  
   .card-glow:hover::before {
-    opacity: 0.15;
+    opacity: 0.4;
+    inset: -4px;
+    filter: blur(15px);
   }
 
   .dark .card-glow:hover::before {
-    opacity: 0.3;
+    opacity: 0.6;
+    inset: -4px;
+    filter: blur(20px);
   }
 
   .section-header-gradient {
