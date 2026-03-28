@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -5,6 +6,14 @@ import { ReactTyped } from "react-typed";
 import MagneticButton from './MagneticButton';
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-32 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
@@ -56,17 +65,33 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="lg:w-1/2 w-full h-[300px] sm:h-[400px] lg:h-[600px] mt-12 lg:mt-0 relative flex items-center justify-center"
+          className="lg:w-1/2 w-full h-[300px] lg:h-[600px] mt-6 lg:mt-0 relative flex items-center justify-center overflow-hidden"
           style={{ pointerEvents: 'auto' }}
         >
-          {/* Main 3D Robot */}
-          <spline-viewer 
-            url="https://prod.spline.design/iK769U-Vz-Jk5W5A/scene.splinecode"
-            style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 10 }}
-          ></spline-viewer>
+          {/* Main 3D Robot - Desktop ONLY */}
+          {!isMobile && (
+            <spline-viewer 
+              url="https://prod.spline.design/iK769U-Vz-Jk5W5A/scene.splinecode"
+              style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 10 }}
+            ></spline-viewer>
+          )}
+
+          {/* Mobile Fallback: Lottie Robot */}
+          {isMobile && (
+            <div className="w-full h-full flex items-center justify-center">
+              <lottie-player 
+                src="https://lottie.host/80dcda10-53bc-42b7-84bc-25fc51206fa1/XEDo00Sg9z.json" 
+                background="transparent" 
+                speed="1" 
+                style={{ width: '100%', height: '100%' }} 
+                loop 
+                autoplay
+              ></lottie-player>
+            </div>
+          )}
           
           {/* Static Fallback / Background Glow */}
-          <div className="absolute inset-0 bg-blue-500/5 dark:bg-blue-400/5 rounded-full blur-3xl scale-75 animate-pulse"></div>
+          <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-400/10 rounded-full blur-3xl scale-75 animate-pulse"></div>
         </motion.div>
       </div>
       
