@@ -31,9 +31,24 @@ function App() {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <ScrollProgress />
       <BackgroundParticles isDark={isDark} />
+      
+      {/* Animated Background Blobs */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <motion.div 
+          animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 dark:bg-blue-400/5 rounded-full blur-[120px]"
+        />
+        <motion.div 
+          animate={{ x: [0, -80, 0], y: [0, 100, 0], scale: [1, 1.1, 1] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-500/10 dark:bg-purple-400/5 rounded-full blur-[120px]"
+        />
+      </div>
+
       <div className="mesh-bg"></div>
       <Navbar toggleTheme={toggleTheme} isDark={isDark} />
       <main>
