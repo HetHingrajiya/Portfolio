@@ -55,8 +55,8 @@ const Hero = () => {
           className="lg:w-1/2 w-full h-[400px] lg:h-[600px] mt-16 lg:mt-0 relative"
           style={{ pointerEvents: 'auto' }}
         >
-          {/* Spline 3D Element: Mini Room (Highly Interactive Cartoon) */}
-          <spline-viewer url="https://prod.spline.design/qWcqV-1g4RItTgs4/scene.splinecode"></spline-viewer>
+          {/* Spline 3D Element: Interactive Cartoon Robot */}
+          <spline-viewer url="https://prod.spline.design/iK769U-Vz-Jk5W5A/scene.splinecode"></spline-viewer>
         </motion.div>
       </div>
       
