@@ -17,13 +17,13 @@ const Education = () => {
 
   return (
     <>
-      <section id="education" className="py-20 sm:py-32 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500">
+      <section id="education" className="py-12 sm:py-24 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-6xl font-black mb-16 sm:mb-24 text-center tracking-tight text-slate-900 dark:text-white"
+            className="text-3xl sm:text-5xl font-black mb-12 sm:mb-16 text-center tracking-tight text-slate-900 dark:text-white"
           >
             Academic <span className="section-header-gradient">Foundation</span>
           </motion.h2>

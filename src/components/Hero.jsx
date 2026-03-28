@@ -65,7 +65,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="lg:w-1/2 w-full h-[300px] lg:h-[600px] mt-6 lg:mt-0 relative flex items-center justify-center overflow-hidden"
+          className="lg:w-1/2 w-full h-[50px] lg:h-[600px] mt-6 lg:mt-0 relative flex items-center justify-center overflow-hidden"
           style={{ pointerEvents: 'auto' }}
         >
           {/* Main 3D Robot - Desktop ONLY */}

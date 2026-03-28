@@ -13,9 +13,9 @@ const About = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <section id="about" className="py-20 sm:py-32 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
+    <section id="about" className="py-12 sm:py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 sm:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
