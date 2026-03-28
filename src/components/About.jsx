@@ -22,9 +22,12 @@ const About = () => {
                   <Code2 className="w-12 h-12 sm:w-20 sm:h-20 text-blue-600 dark:text-blue-400 opacity-5" />
                 </div>
                 <div className="relative z-10 text-center py-6 sm:py-10">
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl sm:rounded-3xl mx-auto mb-6 sm:mb-8 flex items-center justify-center relative">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-6 sm:mb-8 flex items-center justify-center relative">
                     <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 rounded-[2rem] transform -rotate-6 transition-transform hover:rotate-0"></div>
-                    <spline-viewer url="https://prod.spline.design/v2o63Vp-vYjW-X75/scene.splinecode"></spline-viewer>
+                    <spline-viewer 
+                      url="https://prod.spline.design/v2o63Vp-vYjW-X75/scene.splinecode"
+                      style={{ width: '100%', height: '100%' }}
+                    ></spline-viewer>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900 dark:text-white">Het Hingrajiya</h3>
                   <p className="text-blue-600 dark:text-blue-400 font-bold tracking-widest uppercase text-[10px] sm:text-xs">Full Stack Developer</p>
