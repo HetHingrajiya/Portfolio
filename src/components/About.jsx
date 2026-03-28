@@ -32,9 +32,25 @@ const About = () => {
                 </div>
                 <div className="relative z-10 text-center py-6 sm:py-10">
                   <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-6 sm:mb-8 flex items-center justify-center relative">
-                    <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 rounded-[2rem] transform -rotate-6 transition-transform hover:rotate-0 flex items-center justify-center">
-                      <User className="w-20 h-20 text-blue-600/20 dark:text-blue-400/10" />
-                    </div>
+                    <motion.div 
+                      animate={{ 
+                        rotate: [0, -6, 0],
+                        scale: [1, 1.05, 1],
+                      }}
+                      transition={{ 
+                        duration: 6, 
+                        repeat: Infinity, 
+                        ease: "linear" 
+                      }}
+                      className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 rounded-[2.5rem] flex items-center justify-center shadow-inner"
+                    >
+                      <motion.div
+                        animate={{ opacity: [0.2, 0.4, 0.2] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute inset-4 bg-blue-600/20 dark:bg-blue-400/10 rounded-full blur-2xl"
+                      ></motion.div>
+                      <User className="relative z-10 w-24 h-24 text-blue-600 dark:text-blue-400 opacity-20" />
+                    </motion.div>
                     
                     {/* 3D Scene - Desktop ONLY */}
                     {!isMobile && (
