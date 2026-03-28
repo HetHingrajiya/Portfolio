@@ -68,28 +68,29 @@ const Navbar = ({ toggleTheme, isDark }) => {
               
               <button 
                 onClick={toggleTheme}
-                className="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-amber-400 transition-all border border-slate-200 dark:border-slate-700 overflow-hidden w-10 h-10 flex items-center justify-center shadow-inner"
+                className="relative p-2.5 rounded-2xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-amber-400 transition-all border border-slate-200/50 dark:border-white/10 overflow-hidden w-12 h-12 flex items-center justify-center shadow-lg group active:scale-95"
               >
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <AnimatePresence mode="wait">
                   {isDark ? (
                     <motion.div
                       key="sun"
-                      initial={{ y: 20, opacity: 0, rotate: -90 }}
-                      animate={{ y: 0, opacity: 1, rotate: 0 }}
-                      exit={{ y: -20, opacity: 0, rotate: 90 }}
-                      transition={{ duration: 0.3 }}
+                      initial={{ y: 20, opacity: 0, rotate: -90, scale: 0.5 }}
+                      animate={{ y: 0, opacity: 1, rotate: 0, scale: 1 }}
+                      exit={{ y: -20, opacity: 0, rotate: 90, scale: 0.5 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     >
-                      <Sun className="w-5 h-5 text-amber-400" />
+                      <Sun className="w-6 h-6 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]" />
                     </motion.div>
                   ) : (
                     <motion.div
                       key="moon"
-                      initial={{ y: 20, opacity: 0, rotate: 90 }}
-                      animate={{ y: 0, opacity: 1, rotate: 0 }}
-                      exit={{ y: -20, opacity: 0, rotate: -90 }}
-                      transition={{ duration: 0.3 }}
+                      initial={{ y: 20, opacity: 0, rotate: 90, scale: 0.5 }}
+                      animate={{ y: 0, opacity: 1, rotate: 0, scale: 1 }}
+                      exit={{ y: -20, opacity: 0, rotate: -90, scale: 0.5 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     >
-                      <Moon className="w-5 h-5 text-blue-600" />
+                      <Moon className="w-6 h-6 text-blue-600 drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
                     </motion.div>
                   )}
                 </AnimatePresence>

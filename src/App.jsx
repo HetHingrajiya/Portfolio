@@ -13,16 +13,25 @@ import BackgroundParticles from './components/BackgroundParticles';
 import ScrollProgress from './components/ScrollProgress';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'));
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Synchronize React state with the blocking script's decision on mount
+    const currentTheme = document.documentElement.classList.contains('dark');
+    setIsDark(currentTheme);
     
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-      document.documentElement.classList.add('dark');
-      setIsDark(true);
-    }
+    // Listen for system theme changes if no preference is saved
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => {
+      if (!localStorage.getItem('theme')) {
+        const shouldBeDark = e.matches;
+        document.documentElement.classList.toggle('dark', shouldBeDark);
+        setIsDark(shouldBeDark);
+      }
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
