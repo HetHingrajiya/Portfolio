@@ -69,7 +69,8 @@ const Projects = () => {
                 onClick={() => window.open(repo.html_url, '_blank')}
                 className="group relative bg-[#fafafa] dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-100 dark:border-white/5 hover:shadow-2xl transition-all duration-500 cursor-pointer p-8 flex flex-col h-full transform hover:-translate-y-2 card-glow"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-blue-600/10 transition-colors"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 via-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full -mr-12 -mt-12 blur-3xl group-hover:bg-blue-600/20 transition-colors duration-500"></div>
                 <h3 className="text-2xl font-black mb-4 text-slate-900 dark:text-white capitalize group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {repo.name.replace(/[-_]/g, ' ')}
                 </h3>
