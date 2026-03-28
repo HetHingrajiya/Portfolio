@@ -60,23 +60,12 @@ const Education = () => {
                     </div>
                   )}
                 </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-end">
-                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{edu.metric}</span>
-                    <span className={`text-xl sm:text-2xl font-black text-${edu.color}-600 dark:text-${edu.color}-400`}>
-                      {edu.type === 'Graduate' ? '8.72' : 
-                       edu.type === 'Current' ? '2025 - 2027' : edu.val}
-                    </span>
-                  </div>
-                  <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      whileInView={{ width: edu.val }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 1.5, ease: "easeOut" }}
-                      className={`bg-blue-600 dark:bg-blue-400 h-full rounded-full ${edu.type === 'Current' ? 'animate-pulse shadow-[0_0_15px_rgba(59,130,246,0.5)]' : ''}`} 
-                    ></motion.div>
-                  </div>
+                <div className="flex justify-between items-end mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{edu.metric}</span>
+                  <span className={`text-xl sm:text-2xl font-black text-${edu.color}-600 dark:text-${edu.color}-400`}>
+                    {edu.type === 'Graduate' ? '8.72' : 
+                     edu.type === 'Current' ? '2025 - 2027' : edu.val}
+                  </span>
                 </div>
               </motion.div>
             ))}
