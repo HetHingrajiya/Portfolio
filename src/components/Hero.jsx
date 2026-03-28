@@ -6,14 +6,14 @@ import MagneticButton from './MagneticButton';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-4">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-32 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
       <div 
         className="hero-blob bottom-1/4 -right-20" 
         style={{ animationDelay: '-5s', background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1))' }}
       ></div>
       
-      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center z-10 px-4 sm:px-0 mt-10 lg:mt-0">
+      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center z-10 px-4 sm:px-0 mt-0 lg:mt-0">
         
         {/* Left Content */}
         <motion.div 
@@ -33,7 +33,7 @@ const Hero = () => {
               className="text-slate-800 dark:text-slate-200"
             />
           </h1>
-          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-10 sm:mb-14 max-w-xl leading-relaxed font-medium">
+          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 mb-8 sm:mb-12 max-w-xl leading-relaxed font-medium">
             Designing and developing cutting-edge mobile solutions that bridge the gap between imagination and reality.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 w-full justify-center lg:justify-start">
