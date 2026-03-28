@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BackgroundParticles from './components/BackgroundParticles';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="relative w-full">
+      <BackgroundParticles isDark={isDark} />
       <div className="mesh-bg"></div>
       <Navbar toggleTheme={toggleTheme} isDark={isDark} />
       <main>
