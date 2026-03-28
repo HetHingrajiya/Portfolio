@@ -91,12 +91,13 @@ const Education = () => {
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 {achData.map((ach, i) => (
-                  <div key={i} className="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-4 sm:gap-6 hover:shadow-xl transition-all group">
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-${ach.color}-50 dark:bg-${ach.color}-900/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-${ach.color}-600 transition-colors`}>
-                      <ach.Icon className={`text-${ach.color}-600 dark:text-${ach.color}-400 group-hover:text-white w-6 h-6 sm:w-8 sm:h-8`} />
+                  <div key={i} className="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-4 sm:gap-6 hover:shadow-2xl transition-all group relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className={`relative z-10 w-12 h-12 sm:w-16 sm:h-16 bg-${ach.color}-50 dark:bg-${ach.color}-900/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-${ach.color}-600 transition-colors shadow-lg group-hover:shadow-${ach.color}-500/50`}>
+                      <ach.Icon className={`text-${ach.color}-600 dark:text-${ach.color}-400 group-hover:text-white w-6 h-6 sm:w-8 sm:h-8 transition-transform group-hover:scale-110`} />
                     </div>
-                    <div>
-                      <h4 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">{ach.title}</h4>
+                    <div className="relative z-10">
+                      <h4 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{ach.title}</h4>
                       <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">{ach.loc}</p>
                     </div>
                   </div>
@@ -114,8 +115,9 @@ const Education = () => {
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 {['Google Cloud Computing Foundation', 'Python, Great Learning', 'Introduction to C#, Sololearn'].map((cert, i) => (
-                  <div key={i} className={`p-6 sm:p-8 glass rounded-2xl sm:rounded-[2rem] border-l-4 sm:border-l-8 ${i===0 ? 'border-blue-600 dark:border-blue-400' : i===1 ? 'border-green-600 dark:border-green-400' : 'border-purple-600 dark:border-purple-400'} shadow-sm hover:shadow-xl transition-all`}>
-                    <h4 className="text-base sm:text-xl font-black text-slate-900 dark:text-white leading-tight">{cert}</h4>
+                  <div key={i} className={`p-6 sm:p-8 glass rounded-2xl sm:rounded-[2rem] border-l-4 sm:border-l-8 ${i===0 ? 'border-blue-600 dark:border-blue-400' : i===1 ? 'border-green-600 dark:border-green-400' : 'border-purple-600 dark:border-purple-400'} shadow-sm hover:shadow-2xl transition-all group relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <h4 className="relative z-10 text-base sm:text-xl font-black text-slate-900 dark:text-white leading-tight group-hover:translate-x-2 transition-transform">{cert}</h4>
                   </div>
                 ))}
               </div>
