@@ -52,14 +52,17 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="lg:w-1/2 w-full h-[400px] lg:h-[600px] mt-16 lg:mt-0 relative"
+          className="lg:w-1/2 w-full h-[300px] sm:h-[400px] lg:h-[600px] mt-12 lg:mt-0 relative flex items-center justify-center"
           style={{ pointerEvents: 'auto' }}
         >
-          {/* Spline 3D Element: Interactive Cartoon Robot */}
+          {/* Main 3D Robot */}
           <spline-viewer 
             url="https://prod.spline.design/iK769U-Vz-Jk5W5A/scene.splinecode"
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 10 }}
           ></spline-viewer>
+          
+          {/* Static Fallback / Background Glow */}
+          <div className="absolute inset-0 bg-blue-500/5 dark:bg-blue-400/5 rounded-full blur-3xl scale-75 animate-pulse"></div>
         </motion.div>
       </div>
       
