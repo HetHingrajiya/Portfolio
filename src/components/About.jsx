@@ -44,19 +44,7 @@ const About = () => {
                       ></spline-viewer>
                     )}
 
-                    {/* Mobile Placeholder Animation */}
-                    {isMobile && (
-                      <div className="relative z-10 w-full h-full flex items-center justify-center">
-                        <dotlottie-player 
-                          src="https://lottie.host/64703a4c-5f93-4702-901d-55964d471550/S3L6qZ2vSg.json" 
-                          background="transparent" 
-                          speed="1" 
-                          style={{ width: '80%', height: '80%' }} 
-                          loop 
-                          autoplay
-                        ></dotlottie-player>
-                      </div>
-                    )}
+                    {/* Animation removed to resolve 'warning sign' issue and reduce space */}
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900 dark:text-white">Het Hingrajiya</h3>
                   <p className="text-blue-600 dark:text-blue-400 font-bold tracking-widest uppercase text-[10px] sm:text-xs">Full Stack Developer</p>
