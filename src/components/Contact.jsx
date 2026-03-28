@@ -21,7 +21,7 @@ const Contact = () => {
           className="mx-auto w-48 h-48 sm:w-64 sm:h-64 -mt-8 mb-4 overflow-hidden"
         >
           <lottie-player 
-            src="https://assets10.lottiefiles.com/packages/lf20_v74w8x.json" 
+            src="/robot.json" 
             background="transparent" 
             speed="1" 
             style={{ width: '100%', height: '100%' }} 
