@@ -44,12 +44,17 @@ const About = () => {
                       ></spline-viewer>
                     )}
 
-                    {/* Mobile Placeholder Icon */}
+                    {/* Mobile Placeholder Animation */}
                     {isMobile && (
                       <div className="relative z-10 w-full h-full flex items-center justify-center">
-                         <div className="w-32 h-32 bg-blue-600/20 rounded-full flex items-center justify-center animate-pulse">
-                            <User className="w-16 h-16 text-blue-600" />
-                         </div>
+                        <dotlottie-player 
+                          src="https://lottie.host/64703a4c-5f93-4702-901d-55964d471550/S3L6qZ2vSg.json" 
+                          background="transparent" 
+                          speed="1" 
+                          style={{ width: '80%', height: '80%' }} 
+                          loop 
+                          autoplay
+                        ></dotlottie-player>
                       </div>
                     )}
                   </div>
