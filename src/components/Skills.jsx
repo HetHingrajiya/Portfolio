@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
-import { SiAndroid, SiReact, SiFlutter, SiLaravel } from 'react-icons/si';
+import { SiAndroid, SiReact, SiFlutter, SiLaravel, SiMysql, SiFirebase } from 'react-icons/si';
 import { ArrowRight } from 'lucide-react';
 
 const Skills = () => {
@@ -54,6 +54,20 @@ const Skills = () => {
       Icon: SiLaravel,
       color: 'red',
       glowColor: 'bg-red-600'
+    },
+    {
+      title: 'MySQL',
+      desc: 'Designing efficient database schemas and optimizing complex queries for data integrity.',
+      Icon: SiMysql,
+      color: 'orange',
+      glowColor: 'bg-orange-600'
+    },
+    {
+      title: 'Firebase',
+      desc: 'Implementing real-time databases, cloud functions, and seamless authentication.',
+      Icon: SiFirebase,
+      color: 'amber',
+      glowColor: 'bg-amber-600'
     }
   ];
 
@@ -80,7 +94,7 @@ const Skills = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {skills.map((skill, index) => (
             <Tilt key={index} tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.05} perspective={1000} transitionSpeed={1000}>
