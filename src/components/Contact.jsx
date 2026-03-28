@@ -4,14 +4,12 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 sm:py-32 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500">
+    <section id="contact" className="py-16 sm:py-24 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-7xl font-black mb-12 sm:mb-20 tracking-tight text-slate-900 dark:text-white"
-        >
           Let's Create<br/><span className="section-header-gradient">Together</span>
         </motion.h2>
 
@@ -19,7 +17,7 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mx-auto w-64 h-64 sm:w-80 sm:h-80 -mt-10 mb-10 overflow-hidden"
+          className="mx-auto w-48 h-48 sm:w-64 sm:h-64 -mt-8 mb-4 overflow-hidden"
         >
           <lottie-player 
             src="https://lottie.host/80dcda10-53bc-42b7-84bc-25fc51206fa1/XEDo00Sg9z.json" 
@@ -35,7 +33,7 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-16 sm:mb-24"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-12 sm:mb-16"
         >
           <a href="mailto:hethingrajiya97@gmail.com" className="group p-10 sm:p-14 glass rounded-[2.5rem] sm:rounded-[3.5rem] hover:shadow-2xl transition-all border-white/50 dark:border-white/5 card-glow">
             <div className="w-20 h-20 sm:w-24 sm:h-24 bg-blue-50 dark:bg-blue-900/20 rounded-3xl sm:rounded-[2rem] flex items-center justify-center mx-auto mb-8 sm:mb-10 group-hover:scale-110 transition-transform group-hover:bg-blue-600">
