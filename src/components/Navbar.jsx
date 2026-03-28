@@ -60,7 +60,7 @@ const Navbar = ({ toggleTheme, isDark }) => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`nav-link font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+                  className={`nav-link font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
                     activeSection === link.name.toLowerCase() ? 'text-blue-600 dark:text-blue-400' : ''
                   }`}
                 >
@@ -132,7 +132,7 @@ const Navbar = ({ toggleTheme, isDark }) => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="mobile-nav-link text-2xl font-bold hover:text-blue-600 dark:hover:text-blue-400"
+                  className="mobile-nav-link text-2xl font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
                 >
                   {link.name}
                 </a>

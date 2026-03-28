@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+/* Class + data-theme (v4 default dark: follows OS; we only want manual toggle) */
+@custom-variant dark (&:where(.dark, .dark *, [data-theme=dark], [data-theme=dark] *));
+
 @layer base {
   :root {
     --primary: #3b82f6;

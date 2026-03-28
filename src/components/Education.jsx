@@ -45,7 +45,7 @@ const Education = () => {
                      <span className={`text-${edu.type === 'Graduate' ? 'blue' : 'slate'}-600 dark:text-${edu.type === 'Graduate' ? 'blue' : 'slate'}-400 font-black text-[10px] sm:text-xs uppercase tracking-[0.2em]`}>{edu.year}</span>
                   )}
                   <h3 className="text-2xl sm:text-3xl font-black mt-8 mb-2 text-slate-900 dark:text-white">{edu.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-bold mb-4 leading-tight">{edu.inst}</p>
+                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-bold mb-4 leading-tight">{edu.inst}</p>
                   
                   {edu.type === 'Current' && (
                     <div className="flex items-center gap-2 mb-8">
@@ -93,12 +93,12 @@ const Education = () => {
                 {achData.map((ach, i) => (
                   <div key={i} className="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-4 sm:gap-6 hover:shadow-2xl transition-all group relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className={`relative z-10 w-12 h-12 sm:w-16 sm:h-16 bg-${ach.color}-50 dark:bg-${ach.color}-900/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-${ach.color}-600 transition-colors shadow-lg group-hover:shadow-${ach.color}-500/50`}>
-                      <ach.Icon className={`text-${ach.color}-600 dark:text-${ach.color}-400 group-hover:text-white w-6 h-6 sm:w-8 sm:h-8 transition-transform group-hover:scale-110`} />
+                    <div className="relative z-10 w-12 h-12 bg-blue-600/10 dark:bg-blue-400/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-all shadow-md group-hover:shadow-blue-500/50">
+                      <ach.Icon className="text-blue-600 dark:text-blue-400 group-hover:text-white w-6 h-6 transition-transform group-hover:scale-110" />
                     </div>
                     <div className="relative z-10">
-                      <h4 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{ach.title}</h4>
-                      <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">{ach.loc}</p>
+                      <h4 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">{ach.title}</h4>
+                      <p className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-300 font-extrabold uppercase tracking-widest">{ach.loc}</p>
                     </div>
                   </div>
                 ))}

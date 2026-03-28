@@ -12,32 +12,38 @@ import Footer from './components/Footer';
 import BackgroundParticles from './components/BackgroundParticles';
 import ScrollProgress from './components/ScrollProgress';
 
+function applyRootTheme(dark) {
+  const root = document.documentElement;
+  root.classList.toggle('dark', dark);
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  root.style.colorScheme = dark ? 'dark' : 'light';
+}
+
 function App() {
-  const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'));
+  const [isDark, setIsDark] = useState(
+    () => document.documentElement.getAttribute('data-theme') === 'dark' || document.documentElement.classList.contains('dark')
+  );
 
   useEffect(() => {
-    // Synchronize React state with the blocking script's decision on mount
-    const currentTheme = document.documentElement.classList.contains('dark');
-    setIsDark(currentTheme);
-    
-    // Listen for system theme changes if no preference is saved
+    setIsDark(document.documentElement.classList.contains('dark'));
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e) => {
       if (!localStorage.getItem('theme')) {
-        const shouldBeDark = e.matches;
-        document.documentElement.classList.toggle('dark', shouldBeDark);
-        setIsDark(shouldBeDark);
+        applyRootTheme(e.matches);
+        setIsDark(e.matches);
       }
     };
-    
+
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
-    const isDarkNow = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
-    setIsDark(isDarkNow);
+    const nextDark = !document.documentElement.classList.contains('dark');
+    applyRootTheme(nextDark);
+    localStorage.setItem('theme', nextDark ? 'dark' : 'light');
+    setIsDark(nextDark);
   };
 
   return (

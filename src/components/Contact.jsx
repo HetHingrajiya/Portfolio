@@ -35,23 +35,39 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-12 sm:mb-16"
+          className="max-w-lg mx-auto mb-12 sm:mb-16"
         >
-          <a href="mailto:hethingrajiya97@gmail.com" className="group p-10 sm:p-14 glass rounded-[2.5rem] sm:rounded-[3.5rem] hover:shadow-2xl transition-all border-white/50 dark:border-white/5 card-glow">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-blue-50 dark:bg-blue-900/20 rounded-3xl sm:rounded-[2rem] flex items-center justify-center mx-auto mb-8 sm:mb-10 group-hover:scale-110 transition-transform group-hover:bg-blue-600">
-              <Mail className="text-blue-600 dark:text-blue-400 group-hover:text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors" />
-            </div>
-            <h4 className="text-2xl sm:text-3xl font-black mb-3 text-slate-900 dark:text-white">Email</h4>
-            <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 font-bold break-all">hethingrajiya97@gmail.com</p>
-          </a>
-
-          <a href="tel:7069267376" className="group p-10 sm:p-14 glass rounded-[2.5rem] sm:rounded-[3.5rem] hover:shadow-2xl transition-all border-white/50 dark:border-white/5 card-glow">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-green-50 dark:bg-green-900/20 rounded-3xl sm:rounded-[2rem] flex items-center justify-center mx-auto mb-8 sm:mb-10 group-hover:scale-110 transition-transform group-hover:bg-green-600">
-              <Phone className="text-green-600 dark:text-green-400 group-hover:text-white w-10 h-10 sm:w-12 sm:h-12 transition-colors" />
-            </div>
-            <h4 className="text-2xl sm:text-3xl font-black mb-3 text-slate-900 dark:text-white">Phone</h4>
-            <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 font-bold">+91 7069267376</p>
-          </a>
+          <div className="grid grid-cols-1 gap-4">
+            <motion.a 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="mailto:hethingrajiya97@gmail.com" 
+              className="flex items-center gap-4 p-5 glass rounded-2xl group transition-all border border-white/20 dark:border-white/5 shadow-lg text-left"
+            >
+              <div className="w-12 h-12 bg-blue-600/10 dark:bg-blue-400/20 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <Mail className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Email Me</p>
+                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white break-all">hethingrajiya97@gmail.com</p>
+              </div>
+            </motion.a>
+            
+            <motion.a 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="tel:+919726229197" 
+              className="flex items-center gap-4 p-5 glass rounded-2xl group transition-all border border-white/20 dark:border-white/5 shadow-lg text-left"
+            >
+              <div className="w-12 h-12 bg-purple-600/10 dark:bg-purple-400/20 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-inner group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                <Phone className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Call Me</p>
+                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white">+91 97262 29197</p>
+              </div>
+            </motion.a>
+          </div>
         </motion.div>
         
         <motion.div 
@@ -60,11 +76,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="flex justify-center gap-6 sm:gap-10"
         >
-          <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-4 sm:p-6 glass rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:-translate-y-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500">
-            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" aria-hidden />
+          <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-4 sm:p-6 glass rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:-translate-y-2">
+            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" />
           </a>
-          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-4 sm:p-6 glass rounded-full hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 hover:text-white transition-all shadow-lg hover:-translate-y-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500">
-            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8" aria-hidden />
+          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-4 sm:p-6 glass rounded-full hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 hover:text-white transition-all shadow-lg hover:-translate-y-2">
+            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8" />
           </a>
         </motion.div>
         
