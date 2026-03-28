@@ -13,7 +13,7 @@ const About = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <section id="about" className="py-12 sm:py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
+    <section id="about" className="py-8 sm:py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           
@@ -31,7 +31,7 @@ const About = () => {
                   <Code2 className="w-12 h-12 sm:w-20 sm:h-20 text-blue-600 dark:text-blue-400 opacity-5" />
                 </div>
                 <div className="relative z-10 text-center py-6 sm:py-10">
-                  <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-6 sm:mb-8 flex items-center justify-center relative">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto mb-6 flex items-center justify-center relative">
                     <motion.div 
                       animate={{ 
                         rotate: [0, -6, 0],

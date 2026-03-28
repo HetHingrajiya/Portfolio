@@ -15,7 +15,7 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-16 sm:pt-32 overflow-hidden px-4">
+    <section id="home" className="relative min-h-0 lg:min-h-[90vh] flex items-center justify-center pt-8 sm:pt-32 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
       <div 
         className="hero-blob bottom-1/4 -right-20" 
@@ -65,7 +65,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="lg:w-1/2 w-full h-[50px] lg:h-[600px] mt-6 lg:mt-0 relative flex items-center justify-center overflow-hidden"
+          className="lg:w-1/2 w-full hidden lg:flex h-[600px] mt-6 lg:mt-0 relative items-center justify-center overflow-hidden"
           style={{ pointerEvents: 'auto' }}
         >
           {/* Main 3D Robot - Desktop ONLY */}
