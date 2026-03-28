@@ -22,9 +22,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start"
         >
-          <h2 className="text-blue-600 dark:text-blue-400 font-bold tracking-[0.3em] uppercase mb-4 sm:mb-6 text-[10px] sm:text-xs">
-            Based in Rajkot, India
-          </h2>
+
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black mb-6 sm:mb-10 tracking-tight leading-[1] sm:leading-none text-slate-900 dark:text-white text-center lg:text-left">
             I'm <span className="gradient-text">Het Hingrajiya</span><br />
             <ReactTyped 
