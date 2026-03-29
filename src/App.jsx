@@ -10,7 +10,6 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackgroundParticles from './components/BackgroundParticles';
-import ScrollProgress from './components/ScrollProgress';
 
 function applyRootTheme(dark) {
   const root = document.documentElement;
@@ -48,7 +47,6 @@ function App() {
 
   return (
     <div className="relative w-full overflow-hidden">
-      <ScrollProgress />
       <BackgroundParticles isDark={isDark} />
       
       {/* Animated Background Blobs */}
