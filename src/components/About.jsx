@@ -49,7 +49,7 @@ const About = () => {
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         className="absolute inset-4 bg-blue-600/20 dark:bg-blue-400/10 rounded-full blur-2xl"
                       ></motion.div>
-                      <User className="relative z-10 w-24 h-24 text-blue-600 dark:text-blue-400 opacity-20" />
+                      <User className={`relative z-10 w-24 h-24 text-blue-600 dark:text-blue-400 ${isMobile ? 'opacity-80' : 'opacity-20'}`} />
                     </motion.div>
                     
                     {/* 3D Scene - Desktop ONLY */}
@@ -84,23 +84,23 @@ const About = () => {
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 sm:mb-10">
               My approach blends robust technical implementation in <span className="text-blue-600 dark:text-blue-400 font-bold">Android, React, Flutter, and Laravel</span> with a keen eye for modern UI/UX principles, ensuring every app is as beautiful as it is functional.
             </p>
-            <div className="grid grid-cols-2 gap-4 sm:gap-8">
-              <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300 flex items-center gap-4 sm:gap-6">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <UserCheck className="text-blue-600 w-6 h-6" />
+            <div className="grid grid-cols-2 gap-3 sm:gap-8 mt-4">
+              <div className="p-5 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:-translate-y-2 lg:hover:scale-105 transition-all duration-300 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6 text-center sm:text-left">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600/10 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <UserCheck className="text-blue-600 w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <div>
-                  <h4 className="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400 mb-0.5">1+</h4>
-                  <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Year Exp.</p>
+                <div className="flex flex-col items-center sm:items-start">
+                  <h4 className="text-2xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 mb-1">1+</h4>
+                  <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-tight">Year Exp.</p>
                 </div>
               </div>
-              <div className="p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:scale-105 transition-transform duration-300 flex items-center gap-4 sm:gap-6">
-                <div className="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="text-purple-600 w-6 h-6" />
+              <div className="p-5 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:-translate-y-2 lg:hover:scale-105 transition-all duration-300 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6 text-center sm:text-left">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-purple-600/10 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="text-purple-600 w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <div>
-                  <h4 className="text-2xl sm:text-3xl font-black text-purple-600 dark:text-purple-400 mb-0.5">BCA</h4>
-                  <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Graduate</p>
+                <div className="flex flex-col items-center sm:items-start">
+                  <h4 className="text-2xl sm:text-4xl font-black text-purple-600 dark:text-purple-400 mb-1">BCA</h4>
+                  <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-tight">Graduate</p>
                 </div>
               </div>
             </div>
