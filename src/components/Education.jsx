@@ -17,7 +17,7 @@ const Education = () => {
 
   return (
     <>
-      <section id="education" className="py-8 sm:py-16 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500 relative overflow-hidden">
+      <section id="education" className="py-8 sm:py-16 bg-[#fafafa]/60 backdrop-blur-sm dark:bg-slate-950 transition-colors duration-500 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}

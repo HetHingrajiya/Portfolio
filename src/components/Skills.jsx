@@ -84,7 +84,7 @@ const Skills = ({ isDark }) => {
   ];
 
   return (
-    <section id="skills" className="py-8 sm:py-24 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500 overflow-hidden relative">
+    <section id="skills" className="py-8 sm:py-24 bg-[#fafafa]/60 backdrop-blur-sm dark:bg-slate-950 transition-colors duration-500 overflow-hidden relative">
       <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-900/[0.04] bg-[bottom_1px_center] opacity-20 transition-opacity"></div>
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <motion.div 

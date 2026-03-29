@@ -18,8 +18,8 @@ const Hero = () => {
     <section id="home" className="relative min-h-0 lg:min-h-[90vh] flex items-center justify-center pt-20 pb-12 sm:pt-32 lb:pb-24 overflow-hidden px-4">
       <div className="hero-blob top-1/4 -left-20"></div>
       <div 
-        className="hero-blob bottom-1/4 -right-20" 
-        style={{ animationDelay: '-5s', background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1))' }}
+        className="hero-blob bottom-1/4 -right-20 dark:opacity-50" 
+        style={{ animationDelay: '-5s', background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.4), rgba(139, 92, 246, 0.4))' }}
       ></div>
       
       <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center z-10 px-4 sm:px-0 mt-0 lg:mt-0">

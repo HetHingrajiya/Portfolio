@@ -37,7 +37,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-12 sm:py-24 bg-white dark:bg-slate-900 transition-colors duration-500">
+    <section id="projects" className="py-12 sm:py-24 bg-white/60 backdrop-blur-sm dark:bg-slate-900 transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

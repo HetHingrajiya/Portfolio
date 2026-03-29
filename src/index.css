@@ -124,7 +124,7 @@
     position: absolute;
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.4));
     filter: blur(60px);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     z-index: -1;
@@ -159,16 +159,20 @@
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+        radial-gradient(at 0% 0%, hsla(210, 100%, 90%, 0.8) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(280, 100%, 92%, 0.8) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(330, 100%, 92%, 0.8) 0, transparent 50%);
     z-index: -2;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    opacity: 0.8;
+    transition: opacity 0.8s ease-in-out, background-image 0.8s ease-in-out;
     pointer-events: none;
   }
 
   .dark .mesh-bg {
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
     opacity: 0.3;
   }
 

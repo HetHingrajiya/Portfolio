@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-12 sm:py-24 bg-[#fafafa] dark:bg-slate-950 transition-colors duration-500">
+    <section id="contact" className="py-12 sm:py-24 bg-[#fafafa]/60 backdrop-blur-sm dark:bg-slate-950 transition-colors duration-500">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}

@@ -13,7 +13,7 @@ const About = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <section id="about" className="py-8 sm:py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
+    <section id="about" className="py-8 sm:py-24 bg-white/60 backdrop-blur-sm dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           
