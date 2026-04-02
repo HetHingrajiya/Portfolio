@@ -46,7 +46,7 @@ const Projects = () => {
       result: "Automated the booking process, reducing manual errors and improving scheduling efficiency.",
       icon: Calendar,
       color: "indigo",
-      links: { demo: "#", github: "#" }
+      links: { demo: "#", github: "https://github.com/HetHingrajiya?tab=repositories" }
     }
   ];
 
