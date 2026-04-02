@@ -1,40 +1,51 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart } from 'lucide-react';
+import { ExternalLink, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart, Calendar } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
     {
-      title: "Jewelry E-Commerce System",
-      problem: "Local jewelry businesses struggle with managing products, orders, and payments efficiently.",
-      solution: "Developed a full-stack e-commerce platform with secure payment integration.",
-      tech: ["Laravel", "Tailwind CSS", "MySQL", "Razorpay"],
-      features: ["Product management", "Shopping cart & checkout", "Secure online payments", "Admin dashboard"],
-      result: "Reduced manual work and improved order tracking efficiency.",
+      title: "TEAS",
+      problem: "Traditional tea ordering and inventory management can be slow and prone to errors.",
+      solution: "Developed a modern mobile application for efficient tea service management and tracking.",
+      tech: ["Dart", "Flutter", "Firebase"],
+      features: ["Real-time ordering", "Inventory tracking", "User authentication", "Order history"],
+      result: "Streamlined the ordering process and improved inventory accuracy.",
       icon: ShoppingCart,
       color: "blue",
-      links: { demo: "#", github: "#" }
+      links: { demo: "#", github: "https://github.com/HetHingrajiya/Teas" }
     },
     {
-      title: "Barcode Scan to Cart System",
-      problem: "Retail shops needed a faster way to add products to customer carts.",
-      solution: "Built a desktop + mobile system to scan barcodes and directly add items to cart.",
-      tech: [".NET / WPF", "Android", "SQLite"],
-      features: ["Barcode scanning", "Customer selection", "Real-time cart updates", "Data storage"],
-      result: "Improved billing speed and reduced manual entry errors.",
+      title: "GARAGE APP",
+      problem: "Garage owners struggle with tracking service schedules and customer vehicle history.",
+      solution: "Built a comprehensive management solution to streamline service tracking and billing.",
+      tech: ["Dart", "Flutter", "SQLite"],
+      features: ["Service scheduling", "Vehicle history logs", "Automated billing", "Customer management"],
+      result: "Improved service efficiency and customer retention through better tracking.",
       icon: Barcode,
       color: "purple",
-      links: { demo: "#", github: "#" }
+      links: { demo: "#", github: "https://github.com/HetHingrajiya/Garage_app" }
     },
     {
-      title: "Wishlist & Cart System (Android)",
-      problem: "Users needed a way to save products and manage cart items easily.",
-      solution: "Implemented wishlist and cart functionality using local storage.",
-      tech: ["Android (Java)", "SQLite", "RecyclerView"],
-      features: ["Add/remove wishlist items", "Multi-item cart system", "Quantity management"],
-      result: "Enhanced user experience and engagement.",
+      title: "MOVIEVERSE",
+      problem: "Users often find it difficult to discover new movies and find detailed information in one place.",
+      solution: "Created a dynamic movie exploration platform with real-time search and detailed insights.",
+      tech: ["React", "Tailwind CSS", "TMDb API"],
+      features: ["Dynamic search", "Movie details & ratings", "Trending categories", "Responsive design"],
+      result: "Provided an engaging and user-friendly platform for movie enthusiasts.",
       icon: Heart,
       color: "pink",
+      links: { demo: "#", github: "https://github.com/HetHingrajiya/movieverse" }
+    },
+    {
+      title: "SLOT BOOK",
+      problem: "Managing appointment slots and bookings manually leads to overlaps and missed sessions.",
+      solution: "A streamlined booking platform for users to view available slots and book appointments instantly.",
+      tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+      features: ["Real-time availability", "Instant booking", "Email notifications", "Admin management"],
+      result: "Automated the booking process, reducing manual errors and improving scheduling efficiency.",
+      icon: Calendar,
+      color: "indigo",
       links: { demo: "#", github: "#" }
     }
   ];
@@ -42,19 +53,29 @@ const Projects = () => {
   const colorClasses = {
     blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
     purple: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
-    pink: "bg-pink-500/10 text-pink-600 dark:text-pink-400"
+    pink: "bg-pink-500/10 text-pink-600 dark:text-pink-400",
+    indigo: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"
   };
 
   const glowClasses = {
     blue: "from-blue-600/20",
     purple: "from-purple-600/20",
-    pink: "from-pink-600/20"
+    pink: "from-pink-600/20",
+    indigo: "from-indigo-600/20"
   };
 
   const tagClasses = {
     blue: "text-blue-600 dark:text-blue-400",
     purple: "text-purple-600 dark:text-purple-400",
-    pink: "text-pink-600 dark:text-pink-400"
+    pink: "text-pink-600 dark:text-pink-400",
+    indigo: "text-indigo-600 dark:text-indigo-400"
+  };
+
+  const bulletClasses = {
+    blue: "bg-blue-500",
+    purple: "bg-purple-500",
+    pink: "bg-pink-500",
+    indigo: "bg-indigo-500"
   };
 
   return (
@@ -133,7 +154,7 @@ const Projects = () => {
                       <ul className="space-y-2">
                         {project.features.map((f, i) => (
                           <li key={i} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                            <div className={`w-1.5 h-1.5 rounded-full ${project.color === 'blue' ? 'bg-blue-500' : project.color === 'purple' ? 'bg-purple-500' : 'bg-pink-500'}`}></div> {f}
+                            <div className={`w-1.5 h-1.5 rounded-full ${bulletClasses[project.color]}`}></div> {f}
                           </li>
                         ))}
                       </ul>

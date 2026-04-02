@@ -76,7 +76,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl sm:text-5xl font-black mb-6 sm:mb-10 tracking-tight text-slate-900 dark:text-white">
-              👋 <span className="text-blue-600 dark:text-blue-400">My Story</span>
+              <span className="text-blue-600 dark:text-blue-400">My Story</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8 font-medium">
               Hi, I’m <span className="text-blue-600 dark:text-blue-400 font-bold">Het Hingrajiya</span>. I started building apps because I wanted to solve real business problems — especially for local shops and jewelry businesses.

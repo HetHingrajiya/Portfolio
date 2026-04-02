@@ -60,13 +60,6 @@ const Education = () => {
                     </div>
                   )}
                 </div>
-                <div className="flex justify-between items-end mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{edu.metric}</span>
-                  <span className={`text-xl sm:text-2xl font-black text-${edu.color}-600 dark:text-${edu.color}-400`}>
-                    {edu.type === 'Graduate' ? '8.72' : 
-                     edu.type === 'Current' ? '2025 - 2027' : edu.val}
-                  </span>
-                </div>
               </motion.div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
-import { SiAndroid, SiLaravel, SiTailwindcss, SiMysql, SiFirebase, SiPostman, SiGit, SiGithub, SiAndroidstudio } from 'react-icons/si';
+import { SiAndroid, SiLaravel, SiFlutter, SiMysql, SiFirebase, SiPostman, SiGit, SiGithub, SiAndroidstudio } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
 import { Terminal } from 'lucide-react';
 
@@ -38,13 +38,13 @@ const Skills = ({ isDark }) => {
       glow: 'shadow-[0_0_20px_rgba(255,45,32,0.3)]'
     },
     {
-      title: 'Tailwind CSS',
-      desc: 'Designing modern, responsive, and highly customizable user interfaces.',
-      Icon: SiTailwindcss,
-      color: '#38B2AC',
-      bgLight: 'rgba(56, 178, 172, 0.1)',
-      bgDark: 'rgba(56, 178, 172, 0.15)',
-      glow: 'shadow-[0_0_20px_rgba(56,178,172,0.3)]'
+      title: 'Flutter',
+      desc: 'Developing beautiful, natively compiled applications for mobile and web.',
+      Icon: SiFlutter,
+      color: '#02569B',
+      bgLight: 'rgba(2, 86, 155, 0.1)',
+      bgDark: 'rgba(2, 86, 155, 0.15)',
+      glow: 'shadow-[0_0_20px_rgba(2, 86, 155, 0.3)]'
     },
     {
       title: 'MySQL / SQLite',
