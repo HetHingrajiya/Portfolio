@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
-import { SiAndroid, SiLaravel, SiTailwindcss, SiMysql, SiFirebase, SiPostman, SiGit, SiGithub, SiAndroidstudio, SiVisualstudiocode } from 'react-icons/si';
+import { SiAndroid, SiLaravel, SiTailwindcss, SiMysql, SiFirebase, SiPostman, SiGit, SiGithub, SiAndroidstudio } from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
 import { Terminal } from 'lucide-react';
 
 const Skills = ({ isDark }) => {
@@ -77,7 +78,7 @@ const Skills = ({ isDark }) => {
   const tools = [
     { name: 'Git & GitHub', Icon: SiGithub, color: '#181717' },
     { name: 'Android Studio', Icon: SiAndroidstudio, color: '#3DDC84' },
-    { name: 'VS Code', Icon: SiVisualstudiocode, color: '#007ACC' }
+    { name: 'VS Code', Icon: VscCode, color: '#007ACC' }
   ];
 
   return (

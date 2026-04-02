@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart } from 'lucide-react';
+import { ExternalLink, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
@@ -83,8 +84,8 @@ const Projects = () => {
               transition={{ duration: 0.8 }}
               className="group relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-start"
             >
-              {/* Left Side: Info */}
-              <div className="order-2 lg:order-1">
+              {/* Info Section */}
+              <div className={`order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`p-3 rounded-2xl ${colorClasses[project.color]}`}>
                     <project.icon size={32} />
@@ -96,7 +97,7 @@ const Projects = () => {
 
                 <div className="space-y-6">
                   <div>
-                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses.blue}`}>
+                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses[project.color]}`}>
                       <Zap size={16} /> Problem
                     </h4>
                     <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
@@ -105,7 +106,7 @@ const Projects = () => {
                   </div>
 
                   <div>
-                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses.purple}`}>
+                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses[project.color]}`}>
                       <Layers size={16} /> Solution
                     </h4>
                     <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
@@ -114,7 +115,7 @@ const Projects = () => {
                   </div>
 
                   <div>
-                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses.pink}`}>
+                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses[project.color]}`}>
                       <Smartphone size={16} /> Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -132,7 +133,7 @@ const Projects = () => {
                       <ul className="space-y-2">
                         {project.features.map((f, i) => (
                           <li key={i} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> {f}
+                            <div className={`w-1.5 h-1.5 rounded-full ${project.color === 'blue' ? 'bg-blue-500' : project.color === 'purple' ? 'bg-purple-500' : 'bg-pink-500'}`}></div> {f}
                           </li>
                         ))}
                       </ul>
@@ -150,14 +151,14 @@ const Projects = () => {
                       <ExternalLink size={18} /> Live Demo
                     </a>
                     <a href={project.links.github} className="flex items-center gap-2 px-6 py-3 glass text-slate-900 dark:text-white rounded-xl font-bold hover:scale-105 transition-all text-sm border border-slate-200 dark:border-white/10">
-                      <Github size={18} /> GitHub
+                      <FaGithub size={18} /> GitHub
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* Right Side: Image/Placeholder */}
-              <div className="order-1 lg:order-2 relative group">
+              {/* Image/Placeholder Section */}
+              <div className={`order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} relative group`}>
                 <div className={`absolute -inset-4 bg-gradient-to-br ${glowClasses[project.color]} to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 <div className="relative aspect-video rounded-3xl overflow-hidden glass border border-white/20 dark:border-white/5 shadow-2xl">
                   <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800/50">
