@@ -1,39 +1,59 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, GitFork } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import { ExternalLink, Github, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart } from 'lucide-react';
 
 const Projects = () => {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const projects = [
+    {
+      title: "Jewelry E-Commerce System",
+      problem: "Local jewelry businesses struggle with managing products, orders, and payments efficiently.",
+      solution: "Developed a full-stack e-commerce platform with secure payment integration.",
+      tech: ["Laravel", "Tailwind CSS", "MySQL", "Razorpay"],
+      features: ["Product management", "Shopping cart & checkout", "Secure online payments", "Admin dashboard"],
+      result: "Reduced manual work and improved order tracking efficiency.",
+      icon: ShoppingCart,
+      color: "blue",
+      links: { demo: "#", github: "#" }
+    },
+    {
+      title: "Barcode Scan to Cart System",
+      problem: "Retail shops needed a faster way to add products to customer carts.",
+      solution: "Built a desktop + mobile system to scan barcodes and directly add items to cart.",
+      tech: [".NET / WPF", "Android", "SQLite"],
+      features: ["Barcode scanning", "Customer selection", "Real-time cart updates", "Data storage"],
+      result: "Improved billing speed and reduced manual entry errors.",
+      icon: Barcode,
+      color: "purple",
+      links: { demo: "#", github: "#" }
+    },
+    {
+      title: "Wishlist & Cart System (Android)",
+      problem: "Users needed a way to save products and manage cart items easily.",
+      solution: "Implemented wishlist and cart functionality using local storage.",
+      tech: ["Android (Java)", "SQLite", "RecyclerView"],
+      features: ["Add/remove wishlist items", "Multi-item cart system", "Quantity management"],
+      result: "Enhanced user experience and engagement.",
+      icon: Heart,
+      color: "pink",
+      links: { demo: "#", github: "#" }
+    }
+  ];
 
-  useEffect(() => {
-    const fetchRepos = async () => {
-      try {
-        const response = await fetch('https://api.github.com/users/HetHingrajiya/repos?sort=updated&per_page=6');
-        const data = await response.json();
-        if (Array.isArray(data)) {
-          setRepos(data);
-        } else {
-          console.error('GitHub API rate limit exceeded or invalid data', data);
-          setRepos([]);
-        }
-      } catch (error) {
-        console.error('Error fetching repos:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchRepos();
-  }, []);
+  const colorClasses = {
+    blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+    purple: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+    pink: "bg-pink-500/10 text-pink-600 dark:text-pink-400"
+  };
 
-  const projectDescriptions = {
-    'Portfolio': 'A high-end, responsive professional portfolio featuring dynamic integrations and modern UI/UX design.',
-    'Garage_app': 'A comprehensive garage management solution built with Flutter, streamlining service tracking.',
-    'Shiva-shine': 'A professional car detailing and service platform designed for seamless appointment booking.',
-    'movieverse': 'A dynamic movie exploration platform using TMDb API, featuring real-time search.',
-    'E-Commerce_Platform': 'A robust full-stack e-commerce solution with integrated payment gateways.',
-    'Android-projects': 'A collection of native Android applications demonstrating expertise in Java and Kotlin.'
+  const glowClasses = {
+    blue: "from-blue-600/20",
+    purple: "from-purple-600/20",
+    pink: "from-pink-600/20"
+  };
+
+  const tagClasses = {
+    blue: "text-blue-600 dark:text-blue-400",
+    purple: "text-purple-600 dark:text-purple-400",
+    pink: "text-pink-600 dark:text-pink-400"
   };
 
   return (
@@ -46,74 +66,110 @@ const Projects = () => {
           className="text-center mb-16 sm:mb-24"
         >
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight mb-4 sm:mb-6 text-slate-900 dark:text-white">
-            Featured <span className="section-header-gradient">Projects</span>
+            Project <span className="section-header-gradient">Case Studies</span>
           </h2>
           <p className="text-sm sm:text-lg text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto">
-            A curated selection of my most recent work, showcasing dynamic problem-solving and technical expertise.
+            Solving real-world business problems through practical and scalable software solutions.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          {loading ? (
-            Array(3).fill(0).map((_, i) => (
-              <div key={i} className="animate-pulse bg-slate-100 dark:bg-slate-800/50 rounded-[2rem] h-80"></div>
-            ))
-          ) : (
-            repos && repos.length > 0 ? repos.map((repo, idx) => (
-              <motion.a
-                key={repo.id}
-                href={repo.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group relative bg-[#fafafa] dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-100 dark:border-white/5 hover:shadow-2xl transition-all duration-500 cursor-pointer p-8 flex flex-col h-full transform hover:-translate-y-2 card-glow no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 via-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full -mr-12 -mt-12 blur-3xl group-hover:bg-blue-600/20 transition-colors duration-500"></div>
-                <h3 className="text-2xl font-black mb-4 text-slate-900 dark:text-white capitalize group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {repo.name.replace(/[-_]/g, ' ')}
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-6 flex-grow">
-                  {projectDescriptions[repo.name] || repo.description || 'An exciting side project demonstrating advanced implementation details.'}
-                </p>
-                <div className="flex items-center gap-4 text-slate-400 text-sm font-bold pt-6 border-t border-slate-200 dark:border-slate-800">
-                  {repo.language && (
-                    <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span> {repo.language}</span>
-                  )}
-                  {repo.stargazers_count > 0 && (
-                    <span className="flex items-center gap-1"><Star className="w-4 h-4" /> {repo.stargazers_count}</span>
-                  )}
-                  {repo.forks_count > 0 && (
-                    <span className="flex items-center gap-1"><GitFork className="w-4 h-4" /> {repo.forks_count}</span>
-                  )}
+        <div className="grid grid-cols-1 gap-12 sm:gap-20">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="group relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-start"
+            >
+              {/* Left Side: Info */}
+              <div className="order-2 lg:order-1">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`p-3 rounded-2xl ${colorClasses[project.color]}`}>
+                    <project.icon size={32} />
+                  </div>
+                  <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    {project.title}
+                  </h3>
                 </div>
-              </motion.a>
-            )) : (
-              <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-10 text-slate-500">
-                Projects are currently unavailable. Please check my GitHub directly.
-              </div>
-            )
-          )}
-        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <a 
-            href="https://github.com/HetHingrajiya" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-bold hover:scale-105 hover:shadow-xl transition-all shadow-[0_10px_30px_rgba(0,0,0,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500 active:scale-95"
-          >
-            View Full Archive <FaGithub className="w-5 h-5" />
-          </a>
-        </motion.div>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses.blue}`}>
+                      <Zap size={16} /> Problem
+                    </h4>
+                    <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                      {project.problem}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses.purple}`}>
+                      <Layers size={16} /> Solution
+                    </h4>
+                    <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                      {project.solution}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className={`flex items-center gap-2 text-sm font-black uppercase tracking-widest mb-2 ${tagClasses.pink}`}>
+                      <Smartphone size={16} /> Tech Stack
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((t, i) => (
+                        <span key={i} className="px-3 py-1 text-xs font-bold bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 rounded-full border border-slate-200 dark:border-white/10">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-3">Key Features</h4>
+                      <ul className="space-y-2">
+                        {project.features.map((f, i) => (
+                          <li key={i} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium">
+                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> {f}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-3">Result</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 font-bold leading-relaxed">
+                        {project.result}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <a href={project.links.demo} className="flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold hover:scale-105 transition-all text-sm">
+                      <ExternalLink size={18} /> Live Demo
+                    </a>
+                    <a href={project.links.github} className="flex items-center gap-2 px-6 py-3 glass text-slate-900 dark:text-white rounded-xl font-bold hover:scale-105 transition-all text-sm border border-slate-200 dark:border-white/10">
+                      <Github size={18} /> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side: Image/Placeholder */}
+              <div className="order-1 lg:order-2 relative group">
+                <div className={`absolute -inset-4 bg-gradient-to-br ${glowClasses[project.color]} to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <div className="relative aspect-video rounded-3xl overflow-hidden glass border border-white/20 dark:border-white/5 shadow-2xl">
+                  <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800/50">
+                    <project.icon size={64} className="text-slate-300 dark:text-slate-600 animate-pulse" />
+                  </div>
+                  {/* Image tag would go here if available */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -76,13 +76,24 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl sm:text-5xl font-black mb-6 sm:mb-10 tracking-tight text-slate-900 dark:text-white">
-              Crafting Digital<br/><span className="text-blue-600 dark:text-blue-400">Excellence</span>
+              👋 <span className="text-blue-600 dark:text-blue-400">My Story</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8 font-medium">
-              With a BCA degree and a deep-seated passion for cross-platform ecosystems, I specialize in transforming complex requirements into seamless digital experiences across Mobile and Web.
+              Hi, I’m <span className="text-blue-600 dark:text-blue-400 font-bold">Het Hingrajiya</span>. I started building apps because I wanted to solve real business problems — especially for local shops and jewelry businesses.
             </p>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 sm:mb-10">
-              My approach blends robust technical implementation in <span className="text-blue-600 dark:text-blue-400 font-bold">Android, React, Flutter, and Laravel</span> with a keen eye for modern UI/UX principles, ensuring every app is as beautiful as it is functional.
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8">
+              I enjoy turning complex problems into simple, user-friendly solutions. From Android apps to full-stack web systems, I focus on performance, usability, and real-world impact.
+            </p>
+            <div className="mb-8">
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Currently, I’m working on:</h4>
+              <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
+                <li>Retail automation tools</li>
+                <li>E-commerce platforms</li>
+                <li>Desktop + mobile integrations</li>
+              </ul>
+            </div>
+            <p className="text-base sm:text-lg text-blue-600 dark:text-blue-400 font-bold leading-relaxed mb-8 sm:mb-10 italic">
+              "My goal is to build software that actually helps businesses grow."
             </p>
             <div className="grid grid-cols-2 gap-3 sm:gap-8 mt-4">
               <div className="p-5 sm:p-8 glass rounded-2xl sm:rounded-3xl hover:-translate-y-2 lg:hover:scale-105 transition-all duration-300 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6 text-center sm:text-left">

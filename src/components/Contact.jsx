@@ -26,7 +26,7 @@ const Contact = () => {
             <motion.a 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:hethingrajiya97@gmail.com" 
+              href="mailto:your@email.com" 
               className="flex items-center gap-4 p-5 glass rounded-2xl group transition-all border border-white/20 dark:border-white/5 shadow-lg text-left"
             >
               <div className="w-12 h-12 bg-blue-600/10 dark:bg-blue-400/20 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -34,22 +34,22 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Email Me</p>
-                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white break-all">hethingrajiya97@gmail.com</p>
+                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white break-all">your@email.com</p>
               </div>
             </motion.a>
             
             <motion.a 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="tel:+919726229197" 
+              href="tel:+91XXXXXXXXXX" 
               className="flex items-center gap-4 p-5 glass rounded-2xl group transition-all border border-white/20 dark:border-white/5 shadow-lg text-left"
             >
               <div className="w-12 h-12 bg-purple-600/10 dark:bg-purple-400/20 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-inner group-hover:bg-purple-600 group-hover:text-white transition-colors">
                 <Phone className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Call Me</p>
-                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white">+91 97262 29197</p>
+                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">WhatsApp Me</p>
+                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white">+91 XXXXX XXXXX</p>
               </div>
             </motion.a>
           </div>
@@ -59,14 +59,21 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-6 sm:gap-10"
+          className="flex flex-col items-center gap-8"
         >
-          <a href="https://linkedin.com/in/het-hingrajiya-5a63b2273" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-4 sm:p-6 glass rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:-translate-y-2">
-            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" />
-          </a>
-          <a href="https://github.com/HetHingrajiya" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-4 sm:p-6 glass rounded-full hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 hover:text-white transition-all shadow-lg hover:-translate-y-2">
-            <FaGithub className="w-6 h-6 sm:w-8 sm:h-8" />
-          </a>
+          <div className="flex justify-center gap-6 sm:gap-10">
+            <a href="your-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-4 sm:p-6 glass rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-lg hover:-translate-y-2">
+              <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" />
+            </a>
+            <a href="your-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-4 sm:p-6 glass rounded-full hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 hover:text-white transition-all shadow-lg hover:-translate-y-2">
+              <FaGithub className="w-6 h-6 sm:w-8 sm:h-8" />
+            </a>
+          </div>
+          
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest border border-blue-600/20">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            Available for freelance & full-time opportunities
+          </div>
         </motion.div>
         
         <motion.p 

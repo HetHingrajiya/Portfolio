@@ -9,7 +9,7 @@ const Navbar = ({ toggleTheme, isDark }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'services', 'experience', 'education', 'blog', 'testimonials', 'contact'];
       let current = '';
       sections.forEach(section => {
         const element = document.getElementById(section);
@@ -29,8 +29,8 @@ const Navbar = ({ toggleTheme, isDark }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
+    { name: 'Services', href: '#services' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 
