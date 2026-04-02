@@ -9,7 +9,7 @@ const Navbar = ({ toggleTheme, isDark }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'services', 'experience', 'education', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'services', 'experience', 'education', 'contact'];
       let current = '';
       sections.forEach(section => {
         const element = document.getElementById(section);
