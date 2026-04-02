@@ -26,7 +26,7 @@ const Contact = () => {
             <motion.a 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:your@email.com" 
+              href="mailto:hethingrajiya97@gmail.com" 
               className="flex items-center gap-4 p-5 glass rounded-2xl group transition-all border border-white/20 dark:border-white/5 shadow-lg text-left"
             >
               <div className="w-12 h-12 bg-blue-600/10 dark:bg-blue-400/20 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -34,22 +34,22 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Email Me</p>
-                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white break-all">your@email.com</p>
+                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white break-all">hethingrajiya97@gmail.com</p>
               </div>
             </motion.a>
             
             <motion.a 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="tel:+91XXXXXXXXXX" 
+              href="tel:+917069267376" 
               className="flex items-center gap-4 p-5 glass rounded-2xl group transition-all border border-white/20 dark:border-white/5 shadow-lg text-left"
             >
               <div className="w-12 h-12 bg-purple-600/10 dark:bg-purple-400/20 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-inner group-hover:bg-purple-600 group-hover:text-white transition-colors">
                 <Phone className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">WhatsApp Me</p>
-                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white">+91 XXXXX XXXXX</p>
+                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Call Me</p>
+                <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white">+91 70692 67376</p>
               </div>
             </motion.a>
           </div>
