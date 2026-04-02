@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart, Calendar } from 'lucide-react';
+import { ExternalLink, Layers, Zap, Smartphone, ShoppingCart, Barcode, Heart, Calendar, Download } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
@@ -13,7 +13,8 @@ const Projects = () => {
       result: "Streamlined the ordering process and improved inventory accuracy.",
       icon: ShoppingCart,
       color: "blue",
-      links: { demo: "#", github: "https://github.com/HetHingrajiya/Teas" }
+      isMobile: true,
+      links: { demo: "https://github.com/HetHingrajiya/Teas/releases", github: "https://github.com/HetHingrajiya/Teas" }
     },
     {
       title: "GARAGE APP",
@@ -24,7 +25,8 @@ const Projects = () => {
       result: "Improved service efficiency and customer retention through better tracking.",
       icon: Barcode,
       color: "purple",
-      links: { demo: "#", github: "https://github.com/HetHingrajiya/Garage_app" }
+      isMobile: true,
+      links: { demo: "https://github.com/HetHingrajiya/Garage_app/releases", github: "https://github.com/HetHingrajiya/Garage_app" }
     },
     {
       title: "MOVIEVERSE",
@@ -35,6 +37,7 @@ const Projects = () => {
       result: "Provided an engaging and user-friendly platform for movie enthusiasts.",
       icon: Heart,
       color: "pink",
+      isMobile: false,
       links: { demo: "#", github: "https://github.com/HetHingrajiya/movieverse" }
     },
     {
@@ -46,6 +49,7 @@ const Projects = () => {
       result: "Automated the booking process, reducing manual errors and improving scheduling efficiency.",
       icon: Calendar,
       color: "indigo",
+      isMobile: false,
       links: { demo: "#", github: "https://github.com/HetHingrajiya?tab=repositories" }
     }
   ];
@@ -169,7 +173,15 @@ const Projects = () => {
 
                   <div className="flex flex-wrap gap-4 pt-4">
                     <a href={project.links.demo} className="flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold hover:scale-105 transition-all text-sm">
-                      <ExternalLink size={18} /> Live Demo
+                      {project.isMobile ? (
+                        <>
+                          <Download size={18} /> Download APK
+                        </>
+                      ) : (
+                        <>
+                          <ExternalLink size={18} /> Live Demo
+                        </>
+                      )}
                     </a>
                     <a href={project.links.github} className="flex items-center gap-2 px-6 py-3 glass text-slate-900 dark:text-white rounded-xl font-bold hover:scale-105 transition-all text-sm border border-slate-200 dark:border-white/10">
                       <FaGithub size={18} /> GitHub
