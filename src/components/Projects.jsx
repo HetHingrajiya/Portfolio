@@ -103,10 +103,10 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="group relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-start"
+              className="group relative grid lg:grid-cols-12 gap-8 lg:gap-16 items-center"
             >
               {/* Info Section */}
-              <div className={`order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+              <div className={`order-2 ${idx % 2 === 0 ? 'lg:order-1 lg:col-span-5' : 'lg:order-2 lg:col-span-5'}`}>
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`p-3 rounded-2xl ${colorClasses[project.color]}`}>
                     <project.icon size={32} />
@@ -179,11 +179,11 @@ const Projects = () => {
               </div>
 
               {/* Image/Placeholder Section */}
-              <div className={`order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} relative group`}>
+              <div className={`order-1 ${idx % 2 === 0 ? 'lg:order-2 lg:col-span-7' : 'lg:order-1 lg:col-span-7'} relative group w-full h-full`}>
                 <div className={`absolute -inset-4 bg-gradient-to-br ${glowClasses[project.color]} to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                <div className="relative aspect-video rounded-3xl overflow-hidden glass border border-white/20 dark:border-white/5 shadow-2xl">
-                  <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800/50">
-                    <project.icon size={64} className="text-slate-300 dark:text-slate-600 animate-pulse" />
+                <div className="relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden glass border border-white/20 dark:border-white/5 shadow-2xl flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800/50 group-hover:bg-slate-50 dark:group-hover:bg-slate-800/70 transition-colors">
+                    <project.icon size={96} className="text-slate-300 dark:text-slate-600 group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   {/* Image tag would go here if available */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

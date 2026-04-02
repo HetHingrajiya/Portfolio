@@ -25,7 +25,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="py-16 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors duration-500">
+      <footer className="py-8 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors duration-500">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-xs">
             © 2026 Het Hingrajiya 
